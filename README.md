@@ -16,7 +16,9 @@ Add to meteor package system. (not yet published on atmostphere)
 ToDo
 
 ## Code Example
-Simple example based on data provided from http://rusbase.com, a tracker of venture activities in Russia. 
+WebSerializer uses [request](https://www.npmjs.com/package/request) for simple web scraping and [cheerio](https://www.npmjs.com/package/cheerio) to process html before applying content transformations.
+
+Check out following simple example based on data from [rusbase.com](http://rusbase.com/deals/?&period=366), a tracker of venture activities in Russia. Imagine to track changes over time. Same could be done with product review pages.
 
 #### 1. Set-Up a Schema
 ```js
