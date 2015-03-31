@@ -1,6 +1,8 @@
 
 webSerializer = function (config) {
 
+	console.log(config);
+
 	/*
 	* Checking and preparing for correct configuration
 	* */
@@ -10,16 +12,13 @@ webSerializer = function (config) {
 		return false;
 	}
 
+	console.log(config);
+
 	/*
 	* Initialising Job
 	* */
 	var job = new Job(config);
 	log.info("Job created.");
-
-	/*
-	* Error Checking
-	* */
-	// config.error = true;
 
 	return job;
 };

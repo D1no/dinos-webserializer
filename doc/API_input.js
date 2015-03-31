@@ -1,7 +1,6 @@
 /**
  * Created by AProDino on 27.03.15.
  */
-
 var APIinput = {
 
 	// Either url or htmlDocument
@@ -10,7 +9,7 @@ var APIinput = {
 
 	// Optional
 	jobId: "wisoapp_fristen", //optional
-	noDuplicateRows: true, // opt. default true. Prevents duplicate documents from duplicate rows.
+// not implemented	noDuplicateRows: true, // opt. default true. Prevents duplicate documents from duplicate rows.
 	elementsInCollectionDoc: true, // opt. default true. Set to false to not include fetched page elements from fetchElement
 	encoding: "binary", // opt. default undefined for UTF-8. Set to different according to NPM Request Module.
 	userAgent: "request", // opt. default undefined. Set to different according to NPM Request Module.
@@ -38,7 +37,6 @@ var APIinput = {
 			cell: "td", // opt. default td
 			headerRow: 1, // opt. default 1. First row of tableScope.
 			rowStart: 1, // opt. defaults 1. No space between header row and content row.
-			rowLimit: false // opt. defaults false. No processing limit.
 		},
 		columnKeys:
 		// _id, created, element are reserved
@@ -48,7 +46,7 @@ var APIinput = {
 				// skip following column for export, can still be used for column creation if key is set
 				{key: "moduleDescriptionNote", label: "label of the Column", exclude: true},
 				{key: "examiner", label: "label of the Column"},
-				{key: "examDate", label: "label of the Column"},
+				{key: "examDate", label: "label of the Column", transform: function(value, row) {}},
 				{key: "examTime", label: "label of the Column"},
 				{key: "registrationDeadline", label: "label of the Column"},
 				{key: "cancellationDeadline", label: "label of the Column"},

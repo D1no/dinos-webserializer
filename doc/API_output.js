@@ -3,10 +3,9 @@
  */
 var APIoutput = {
 	jobId: "wisoapp_fristen",
-	created: "I20150325-22:51:02.031",
+	date: "I20150325-22:51:02.031",
 	url: "https://wisoapp.uni-koeln.de/pruefungsfristen.php",
-	websiteTitle: "Prüfungsverwaltung des WiSo-Prüfungsamtes",
-	element: {
+	fetched: {
 		pageTitle: {
 			value: "Übersicht aktueller Prüfungstermine",
 			label: "Page Title of the Blog",
@@ -19,7 +18,7 @@ var APIoutput = {
 			same: "but different"
 		}
 	},
-	structure: {
+	source: {
 		numberColumns: 9,
 		numberRows: 90,
 		header: [
@@ -35,9 +34,9 @@ var APIoutput = {
 			{key: "numberRegistered", label: "label of the Column", value: "columnScrapedValue"}
 		]
 	},
-	collection: [
+	frame: [
 		{
-			_id: "ASFEWADASFNKJASLD",
+			_jobId: "ASFEWADASFNKJASLD",
 			_url: "http://asdasdfasdsad.de",
 			_page: {
 				title: {
