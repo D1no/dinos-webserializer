@@ -15,7 +15,7 @@ Add to meteor package system. (not yet published on atmostphere)
 
 ToDo
 
-### WebSerializer Schema
+##### WebSerializer Schema
 
 ```js
 var schema = {
