@@ -2,7 +2,7 @@
 
 Web parser & scraper for meteor to collect and transform html into a document schema. Simple scraping with the ability to perform transformation of collected page elements and whole tables including batch row and column manipulation.
 
-## Motivation: Refine unstructured Data for Time Series Analysis
+## Motivation: Refine unstructured -> time series data!
 
 Once a WebSerializer schema is defined, consequent scraping leads to a data store with an inherent structure that makes it easy to find and match individual changes inside html documents and websites. Tables are stored on a document <-> row basis with contextual information that makes it possible to re-serialize the original form.
 Perfect for context based natural language processing and artificial neural network.
