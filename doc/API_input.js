@@ -1,6 +1,8 @@
 /**
  * Created by AProDino on 27.03.15.
  */
+
+// Mock-Up
 var APIinput = {
 
 	// Either url or htmlDocument
@@ -77,6 +79,84 @@ var APIinput = {
 				field: function (text, html, row) {
 					// manipulating field
 					return (value.text);
+				}
+			}
+		}
+	}
+};
+
+
+var rusBaseYearSchema = {
+	url: "http://rusbase.com/deals/?&period=366",
+	jobId: "rusbase",
+	fetch:  [
+		{
+			key: "title",
+			cssSelector: "h1",
+			label: "Title of the Rusbase Page", //opt.
+			transform: function (value) { return value.text} //opt.
+		},
+		{
+			key: "numberInvestments",
+			cssSelector: "#layout h5:nth-child(2)",
+			label: "Total Number of Investments", //opt.
+			transform: function (value) {
+
+
+				return value
+			} //opt.
+		},
+		{
+			key: "totalInvestments",
+			cssSelector: "#layout h5:nth-child(3)",
+			label: "Total Dollar Value of Investments", //opt.
+			transform: function (value) {
+
+
+				return value
+			} //opt.
+		}
+
+	],
+	frame: {
+		cssSelector: {
+			scope: "table.list_inve", // opt
+			row: "tr", // opt
+			header: "td", // opt
+			cell: "td", // opt
+			headerRow: 1, // opt
+			rowStart: 2 // opt
+		},
+		column: [
+			{key: "date", label: "Month of the Deal", transform: function(field, row) { // field object has .text and .html
+				return field.text.replace("/", "-"); // will append as .value. Optionally return object, properties are added sub-document
+			}},
+			{key: "company", label: "Receiving Company"},
+			{key: "type", label: "Type of the Deal", transform: function(field, row) {
+				return field.text;
+			}},
+			{key: "amount", label: "Dolar Value of the Deal", transform: function(field, row) {
+				return field.text.replace("None", 0);
+			}},
+			{key: "investor", label: "Investor in the Deal"}
+
+		],
+		newColumn: {
+			disclosed: {
+				fromColumnKey: "amount",
+				label: "Description of the Module",
+				header: function (field, row) {
+					// cropping header
+					return ({text: "Disclosure", html: field.html});
+				},
+				field: function (field, row) {
+					var status = true;
+
+					if(field.text == "None") {
+						status = false;
+					}
+					// manipulating field
+					return ({status: status});
 				}
 			}
 		}

@@ -1,6 +1,8 @@
 /**
  * Created by AProDino on 26.03.15.
  */
+
+	// Mock-Up
 var APIoutput = {
 	jobId: "wisoapp_fristen",
 	date: "I20150325-22:51:02.031",
