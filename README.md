@@ -9,7 +9,7 @@ Perfect for context based natural language processing and artificial neural netw
 
 ## Installation
 
-Add to meteor package system. (not yet published on atmostphere)
+Add to meteor package system. (not yet published on atmosphere)
 
 ## API Reference
 
