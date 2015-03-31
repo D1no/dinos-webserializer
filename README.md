@@ -1,6 +1,6 @@
 ## Web_Serializer for Meteor
 
-Web parser & scraper to collect and transform html into a document schema. Simple scraping with the ability to perform transformation of collected page elements and whole tables including batch row and column manipulation.
+Web parser & scraper for meteor to collect and transform html into a document schema. Simple scraping with the ability to perform transformation of collected page elements and whole tables including batch row and column manipulation.
 
 ## Motivation: Time Series Analysis of
 
