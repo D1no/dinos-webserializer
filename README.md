@@ -15,6 +15,54 @@ Add to meteor package system. (not yet published on atmostphere)
 
 ToDo
 
+### WebSerializer Schema
+
+```js
+var schema = {
+	htmlDocument: "",
+	url: "",
+	jobId: "", // opt
+	encoding: "", // opt
+	userAgent: "", // opt
+	fetchInFrame: true, // opt default true
+	fetch: [ // various page elements
+		{
+			key: "",
+			cssSelector: "",
+			label: "", //opt.
+			transform: function (value) {} //opt.
+		}
+	],
+	frame: { // row-column structure
+		cssSelector: {
+			scope: "", // opt
+			row: "tr", // opt
+			header: "th", // opt
+			cell: "td", // opt
+			headerRow: 1, // opt
+			rowStart: 1 // opt
+		},
+		column: [
+			{ // for each column of the structure, set exclude for ignoring the column during export. If a key is provided, the column can still be used for column creation
+				key: "", // opt
+				label: "", // opt
+				exclude: false, // opt
+				transform: function(value, row) {} // opt
+			}
+		],
+		newColumn: {
+			keyOfNewColumn: { // new property for each new column, based on the provided which needs to be defined above
+				fromColumn: "columns.key",
+				label: "",  // opt
+				header: function(value, row) {}, // opt
+				field: function(value, row) {} // opt
+			}
+		}
+	}
+
+};
+```
+
 ## Code Example
 WebSerializer uses [request](https://www.npmjs.com/package/request) for simple web scraping and [cheerio](https://www.npmjs.com/package/cheerio) to process html before applying content transformations.
 
