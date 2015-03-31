@@ -1,8 +1,6 @@
 
 webSerializer = function (config) {
 
-	console.log(config);
-
 	/*
 	* Checking and preparing for correct configuration
 	* */
@@ -11,8 +9,6 @@ webSerializer = function (config) {
 		log.warn("Aborted. Check config errors.");
 		return false;
 	}
-
-	console.log(config);
 
 	/*
 	* Initialising Job
