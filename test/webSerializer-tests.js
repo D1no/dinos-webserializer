@@ -12,7 +12,7 @@ var validDummyUrl = "/packages/local-test_dinos_webserializer/test/assets/wiso_u
 Tinytest.add('webSerializer - webSerializer.js clean initialization - Worker receives a new Job through webSerializer(schemaObject) initialisation', function (test) {
 	var testSite = webSerializer({url: validDummyUrl});
 	test.instanceOf(testSite, Object);
-	test.isTrue(_.has(testSite, "config", "config property on initialized worker"));
+	test.isTrue(_.has(testSite, "config"), "config property on initialized worker");
 
 	// when there is no base url or htmlDocument, should return false
 	testSite = webSerializer({stupid: "mistake"});
