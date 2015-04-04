@@ -1,0 +1,4783 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
+'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+
+<head>
+<meta http-equiv='content-type' content='text/html; charset=ISO-8859-1'>
+<META NAME='description' content='Anmeldung zum Prüfungsverfahren an der WiSo-Fakultät der Universität zu Köln'>
+<META NAME='author' content='WiSo-Prüfungsamt, Universität zu Köln'>
+<META NAME='keywords' content='Diplom, Bachelor, Master, BWL, VWL, Information Systems, Sozilawissenschaften, Prüfungsverfahren, Ersterfassung, Erstanmeldung, Zulassung'>
+<title>Prüfungsverwaltung des WiSo-Prüfungsamtes</title>
+<link rel='stylesheet' type='text/css' href='/css/style.css' media='screen' />
+<link rel='shortcut icon' href='images/pa.ico' />
+<script language='javascript'>
+function toggle(control){
+var elem = document.getElementById(control);
+if(elem.style.display == 'block'){
+elem.style.display = 'none';
+var h3name = 'h3' + control;
+var h3elem = document.getElementsByName(h3name);
+var nname = '[+] ' + h3elem[0].getAttribute('value');
+h3elem[0].firstChild.data = nname;
+} else {
+elem.style.display = 'block';
+var h3name = 'h3'+control;
+var h3elem = document.getElementsByName(h3name);
+var nname = '[-] ' + h3elem[0].getAttribute('value');
+h3elem[0].firstChild.data = nname;
+}
+window.location.href =  '#' + control;
+}
+function start(){
+var elems = document.getElementsByTagName('a');
+var ausgabe='';
+for (var i=0;i<elems.length;i++){
+if (elems[i].getAttribute('name')=='help' || 
+elems[i].getAttribute('name')=='Kontaktformular' || 
+elems[i].getAttribute('name')=='Prüfungsfristen' || 
+elems[i].getAttribute('name')==null ){
+}else{
+ausgabe=ausgabe+elems[i].getAttribute('name');
+var elem = document.getElementById(elems[i].getAttribute('name'));
+if(elem.style.display == 'block'){
+elem.style.display = 'none';
+var h3name = 'h3'+elems[i].getAttribute('name');
+var h3elem = document.getElementsByName(h3name);
+var nname = '[+] ' + h3elem[0].getAttribute('value');
+h3elem[0].firstChild.data = nname;
+
+}
+}}}</script>
+
+</head>
+<div id='siegel'>
+<table border='0' cellpadding='0' cellspacing='0' width='100%'>
+<tbody>
+<tr>
+<td align='center' width='88'> 
+<img src='images/unisiegel_tp.png' 
+width='88' height='88' alt='Universit&auml;ts-Logo' border='0' /></td>
+<td align='left'>
+  <table border='0' cellpadding='4' cellspacing='4' width='100%'>
+  <tbody>
+  <tr><td class='head_xl'> 
+Universit&auml;t zu K&ouml;ln</td></tr>
+  <tr><td><img src='images/wiso_linie.gif' alt='' height='3' width='100%' /></td></tr>
+  <tr><td class='head_xxl'><img src='images/wiso_rechteck.gif' alt='' 
+/>&nbsp;Pr&uuml;fungs&auml;mter 
+der WiSo-Fakult&auml;t</td></tr>
+  </tbody>		
+  </table>
+  </td>
+  <td align='right'> 
+<img src='images/wisosiegel_tp.png' width='88' height='88' 
+alt='Fakult&auml;t-Logo' border='0' /></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr /><p align='right'><a name='help' href='help.php?content=main' target='_blank'>Hilfe</a>
+|<a name='Kontaktformular' href='help.php?content=contact' target='_blank'>Kontakt</a>
+|<a name='Prüfungsfristen' href='pruefungsfristen.php' target='_blank'>Prüfungsfristen</a></p>
+
+<body onLoad=start()><div id='box'><h1>Prüfungsverwaltung des WiSo-Prüfungsamtes</h1>
+<h2>Übersicht aktueller Prüfungstermine</h2>
+<table><tr>
+<th><a href='pruefungsfristen.php?order=modul'>Modul</a></th>
+<th><a href='pruefungsfristen.php?order=modulname'>Modulbezeichnung (<i>mit Bemerkung</i>)</a></th>
+<th><a href='pruefungsfristen.php?order=pruefer'>Prüfer</a></th>
+<th><a href='pruefungsfristen.php?order=datum'>Prüfungsdatum</a></th><th>Prüfungszeit</th>
+<th>Meldefrist</th><th>Rücknahmefrist</th><th>Prüfungsanmeldung</th>
+<th>Anzahl</th></tr>
+<tr bgcolor='DF DF DF'><td><a name='' href='#'></a></td><td> (<i>Vergabeverfahren der VWL</i>)</td>
+<td>Nardotto</td>
+<td>14.04.15</td>
+<td>LS</td>
+<td>28.01.15</td>
+<td>31.03.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='01001' href='#01001'></a>01001</td><td>Operations Management</td>
+<td>Thonemann</td>
+<td>30.05.15</td>
+<td>10:30:00</td>
+<td>11.05.15</td>
+<td>18.05.15</td>
+<td>wisoapp</td>
+<td>63</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='01001' href='#01001'></a>01001</td><td>Operations Management</td>
+<td>Thonemann</td>
+<td>19.09.15</td>
+<td>08:45:00</td>
+<td>27.08.15</td>
+<td>03.09.15</td>
+<td>wisoapp</td>
+<td>2</td>
+</tr>
+<tr ><td><a name='01002' href='#01002'></a>01002</td><td>Technik des betrieblichen Rechnungswesens</td>
+<td>Homburg</td>
+<td>30.05.15</td>
+<td>12:15:00</td>
+<td>11.05.15</td>
+<td>18.05.15</td>
+<td>wisoapp</td>
+<td>8</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='01002' href='#01002'></a>01002</td><td>Technik des betrieblichen Rechnungswesens</td>
+<td>Homburg</td>
+<td>27.07.15</td>
+<td>15:00:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr ><td><a name='01002' href='#01002'></a>01002</td><td>Technik des betrieblichen Rechnungswesens</td>
+<td>Homburg</td>
+<td>29.09.15</td>
+<td>12:45:00</td>
+<td>27.08.15</td>
+<td>03.09.15</td>
+<td>wisoapp</td>
+<td>4</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='01003' href='#01003'></a>01003</td><td>Marketing</td>
+<td>Becker</td>
+<td>23.05.15</td>
+<td>12:15:00</td>
+<td>04.05.15</td>
+<td>11.05.15</td>
+<td>wisoapp</td>
+<td>55</td>
+</tr>
+<tr ><td><a name='01003' href='#01003'></a>01003</td><td>Marketing</td>
+<td>Becker</td>
+<td>19.09.15</td>
+<td>14:00:00</td>
+<td>27.08.15</td>
+<td>03.09.15</td>
+<td>wisoapp</td>
+<td>4</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='01004' href='#01004'></a>01004</td><td>Investition und Finanzierung</td>
+<td>Schradin</td>
+<td>30.05.15</td>
+<td>14:00:00</td>
+<td>11.05.15</td>
+<td>18.05.15</td>
+<td>wisoapp</td>
+<td>74</td>
+</tr>
+<tr ><td><a name='01004' href='#01004'></a>01004</td><td>Investition und Finanzierung</td>
+<td>Schradin</td>
+<td>19.09.15</td>
+<td>10:30:00</td>
+<td>27.08.15</td>
+<td>03.09.15</td>
+<td>wisoapp</td>
+<td>2</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='01005' href='#01005'></a>01005</td><td>Kosten- und Leistungsrechnung</td>
+<td>Homburg</td>
+<td>20.07.15</td>
+<td>08:45:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>19</td>
+</tr>
+<tr ><td><a name='01005' href='#01005'></a>01005</td><td>Kosten- und Leistungsrechnung</td>
+<td>Homburg</td>
+<td>29.09.15</td>
+<td>11:00:00</td>
+<td>27.08.15</td>
+<td>03.09.15</td>
+<td>wisoapp</td>
+<td>7</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='01006' href='#01006'></a>01006</td><td>Bilanz- und Erfolgsrechnung</td>
+<td>Kuhner</td>
+<td>30.05.15</td>
+<td>08:45:00</td>
+<td>11.05.15</td>
+<td>18.05.15</td>
+<td>wisoapp</td>
+<td>70</td>
+</tr>
+<tr ><td><a name='01006' href='#01006'></a>01006</td><td>Bilanz- und Erfolgsrechnung</td>
+<td>Kuhner</td>
+<td>17.09.15</td>
+<td>08:45:00</td>
+<td>27.08.15</td>
+<td>03.09.15</td>
+<td>wisoapp</td>
+<td>8</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='01102' href='#01102'></a>01102</td><td>Bachelorseminar Accounting and Taxation</td>
+<td>Kuhner</td>
+<td>30.04.15</td>
+<td>LS</td>
+<td>16.04.15</td>
+<td>16.04.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr ><td><a name='01103' href='#01103'></a>01103</td><td>Bachelorseminar Finance</td>
+<td>Pütz</td>
+<td>08.05.15</td>
+<td>LS</td>
+<td>10.04.15</td>
+<td>24.04.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='01103' href='#01103'></a>01103</td><td>Bachelorseminar Finance</td>
+<td>Spörk</td>
+<td>10.07.15</td>
+<td>09:00:00</td>
+<td>17.04.15</td>
+<td>24.04.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='01104' href='#01104'></a>01104</td><td>Bachelorseminar Marketing</td>
+<td>Rangarajan</td>
+<td>14.08.15</td>
+<td>09:00:00</td>
+<td>31.07.15</td>
+<td>31.07.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='01105' href='#01105'></a>01105</td><td>Bachelorseminar Supply Chain Management</td>
+<td>Tempelmeier</td>
+<td>14.04.15</td>
+<td>12:00:00</td>
+<td>14.04.15</td>
+<td>14.04.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='01105' href='#01105'></a>01105</td><td>Bachelorseminar Supply Chain Management (<i>Abgabe der Arbeiten am 17.07.2015</i>)</td>
+<td>Thonemann</td>
+<td>03.06.15</td>
+<td>10:00:00</td>
+<td>20.05.15</td>
+<td>20.05.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='01106' href='#01106'></a>01106</td><td>Bachelorseminar Corporate Development</td>
+<td>Kampkötter</td>
+<td>17.04.15</td>
+<td>LS</td>
+<td>17.04.15</td>
+<td>17.04.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='01106' href='#01106'></a>01106</td><td>Bachelorseminar Corporate Development</td>
+<td>Danilov</td>
+<td>15.05.15</td>
+<td>12:00:00</td>
+<td>01.05.15</td>
+<td>01.05.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='02001' href='#02001'></a>02001</td><td>Mathematische Methoden</td>
+<td>Scheicher</td>
+<td>24.07.15</td>
+<td>08:45:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>13</td>
+</tr>
+<tr ><td><a name='02001' href='#02001'></a>02001</td><td>Mathematische Methoden</td>
+<td>Scheicher</td>
+<td>30.07.15</td>
+<td>08:45:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>9</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='02002' href='#02002'></a>02002</td><td>Einführung in die Finanzwissenschaft</td>
+<td>Bierbrauer</td>
+<td>17.07.15</td>
+<td>14:00:00</td>
+<td>03.07.15</td>
+<td>03.07.15</td>
+<td>wisoapp</td>
+<td>16</td>
+</tr>
+<tr ><td><a name='02003' href='#02003'></a>02003</td><td>Grundzüge der Mikroökonomik (<i>Gürtler/Fath</i>)</td>
+<td>Diverse</td>
+<td>22.07.15</td>
+<td>08:45:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>20</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='02003' href='#02003'></a>02003</td><td>Grundzüge der Mikroökonomik (<i>Gürtler/Fath</i>)</td>
+<td>Diverse</td>
+<td>22.09.15</td>
+<td>08:45:00</td>
+<td>27.08.15</td>
+<td>03.09.15</td>
+<td>wisoapp</td>
+<td>10</td>
+</tr>
+<tr ><td><a name='02004' href='#02004'></a>02004</td><td>Grundzüge der Makroökonomik</td>
+<td>Diverse</td>
+<td>27.07.15</td>
+<td>08:45:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>54</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='02004' href='#02004'></a>02004</td><td>Grundzüge der Makroökonomik</td>
+<td>Diverse</td>
+<td>28.09.15</td>
+<td>15:45:00</td>
+<td>27.08.15</td>
+<td>03.09.15</td>
+<td>wisoapp</td>
+<td>9</td>
+</tr>
+<tr ><td><a name='03001' href='#03001'></a>03001</td><td>Beschreibende Statistik und Wirtschaftsstatistik (Statistik A)</td>
+<td>Dyckerhoff</td>
+<td>11.07.15</td>
+<td>08:45:00</td>
+<td>22.06.15</td>
+<td>29.06.15</td>
+<td>wisoapp</td>
+<td>10</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='03001' href='#03001'></a>03001</td><td>Beschreibende Statistik und Wirtschaftsstatistik (Statistik A)</td>
+<td>Dyckerhoff</td>
+<td>29.07.15</td>
+<td>08:45:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr ><td><a name='03002' href='#03002'></a>03002</td><td>Wahrscheinlichkeitsrechnung und schließende Statistik (Statistik B) (<i>Gribisch/Scheicher</i>)</td>
+<td>Diverse</td>
+<td>11.07.15</td>
+<td>11:00:00</td>
+<td>22.06.15</td>
+<td>29.06.15</td>
+<td>wisoapp</td>
+<td>69</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='03002' href='#03002'></a>03002</td><td>Wahrscheinlichkeitsrechnung und schließende Statistik (Statistik B) (<i>Gribisch/Scheicher</i>)</td>
+<td>Diverse</td>
+<td>28.07.15</td>
+<td>08:45:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>13</td>
+</tr>
+<tr ><td><a name='04002' href='#04002'></a>04002</td><td>Bürgerliches Vermögensrecht</td>
+<td>Deckenbrock</td>
+<td>23.05.15</td>
+<td>08:45:00</td>
+<td>04.05.15</td>
+<td>11.05.15</td>
+<td>wisoapp</td>
+<td>40</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='04002' href='#04002'></a>04002</td><td>Bürgerliches Vermögensrecht</td>
+<td>Deckenbrock</td>
+<td>30.07.15</td>
+<td>12:45:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>4</td>
+</tr>
+<tr ><td><a name='04003' href='#04003'></a>04003</td><td>Handels- und Gesellschaftsrecht</td>
+<td>Böttcher</td>
+<td>30.07.15</td>
+<td>11:00:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>42</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='04004' href='#04004'></a>04004</td><td>Öffentliches Recht</td>
+<td>Kempny</td>
+<td>28.07.15</td>
+<td>14:30:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='05101' href='#05101'></a>05101</td><td>Einführung in die Politische Theorie und Ideengeschichte</td>
+<td>Leidhold</td>
+<td>29.07.15</td>
+<td>12:45:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>7</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='05102' href='#05102'></a>05102</td><td>Einführung in die Europäische Politik</td>
+<td>Wessels</td>
+<td>28.07.15</td>
+<td>11:00:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>23</td>
+</tr>
+<tr ><td><a name='05103' href='#05103'></a>05103</td><td>Einführung in die Internationalen Beziehungen</td>
+<td>Jäger</td>
+<td>27.07.15</td>
+<td>16:45:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>8</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='05104' href='#05104'></a>05104</td><td>Einführung in die Vergleichende Politikwissenschaft: Vergleichende Analyse Politischer Institutionen</td>
+<td>Kaiser</td>
+<td>29.07.15</td>
+<td>14:30:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>3</td>
+</tr>
+<tr ><td><a name='05105' href='#05105'></a>05105</td><td>Seminar - Politische Theorie und Ideengeschichte</td>
+<td>Halbeisen</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='05105' href='#05105'></a>05105</td><td>Seminar - Politische Theorie und Ideengeschichte</td>
+<td>Kamp</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr ><td><a name='05105' href='#05105'></a>05105</td><td>Seminar - Politische Theorie und Ideengeschichte</td>
+<td>Scholemann</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>2</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='05105' href='#05105'></a>05105</td><td>Seminar - Politische Theorie und Ideengeschichte</td>
+<td>Leidhold</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr ><td><a name='05106' href='#05106'></a>05106</td><td>Seminar - Internationale Politik</td>
+<td>Reyes</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>2</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='05106' href='#05106'></a>05106</td><td>Seminar - Internationale Politik</td>
+<td>Diersch</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr ><td><a name='05106' href='#05106'></a>05106</td><td>Seminar - Internationale Politik</td>
+<td>Henke</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>4</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='05106' href='#05106'></a>05106</td><td>Seminar - Internationale Politik</td>
+<td>Jäger</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr ><td><a name='05107' href='#05107'></a>05107</td><td>Seminar - Außenpolitik</td>
+<td>Fischer</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>4</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='05107' href='#05107'></a>05107</td><td>Seminar - Außenpolitik</td>
+<td>Lessmann</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>2</td>
+</tr>
+<tr ><td><a name='05107' href='#05107'></a>05107</td><td>Seminar - Außenpolitik</td>
+<td>Lloyd</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='05108' href='#05108'></a>05108</td><td>Seminar - Europäische Politik</td>
+<td>Becker</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr ><td><a name='05108' href='#05108'></a>05108</td><td>Seminar - Europäische Politik</td>
+<td>Windheuser</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>3</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='05108' href='#05108'></a>05108</td><td>Seminar - Europäische Politik</td>
+<td>Hefftler</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='05109' href='#05109'></a>05109</td><td>Aktuelle Fragen der Politikwissenschaft</td>
+<td>Umbach</td>
+<td>14.08.15</td>
+<td>09:00:00</td>
+<td>31.07.15</td>
+<td>31.07.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='05110' href='#05110'></a>05110</td><td>Seminar - Vergleichende Politikwissenschaft</td>
+<td>Grohe</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr ><td><a name='05110' href='#05110'></a>05110</td><td>Seminar - Vergleichende Politikwissenschaft</td>
+<td>Reale</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='05111' href='#05111'></a>05111</td><td>Einführung in die Vergleichende Politikwissenschaft: Vergleichende Politische Ökonomie</td>
+<td>Trampusch</td>
+<td>23.07.15</td>
+<td>15:45:00</td>
+<td>06.07.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>14</td>
+</tr>
+<tr ><td><a name='05206' href='#05206'></a>05206</td><td>Global Governance und Internationale Beziehungen</td>
+<td>Ankel</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>4</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='05208' href='#05208'></a>05208</td><td>The Political System of the EU: Governance and Institutions</td>
+<td>Steppacher</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='05208' href='#05208'></a>05208</td><td>The Political System of the EU: Governance and Institutions</td>
+<td>Höing</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='05208' href='#05208'></a>05208</td><td>The Political System of the EU: Governance and Institutions</td>
+<td>Höing</td>
+<td>28.08.15</td>
+<td>09:00:00</td>
+<td>14.08.15</td>
+<td>14.08.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='05209' href='#05209'></a>05209</td><td>Religion im Streit der Wissenschaften</td>
+<td>Leidhold</td>
+<td>12.06.15</td>
+<td>14:00:00</td>
+<td>29.05.15</td>
+<td>29.05.15</td>
+<td>wisoapp</td>
+<td>5</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='05211' href='#05211'></a>05211</td><td>Psychologie von Religion und (Aber)Glauben</td>
+<td>Fetchenhauer</td>
+<td>13.06.15</td>
+<td>09:00:00</td>
+<td>07.04.15</td>
+<td>07.04.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='05212' href='#05212'></a>05212</td><td>Religion und Repräsentation: Herrschaft und Genossenschaft</td>
+<td>Leidhold</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>6</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='05214' href='#05214'></a>05214</td><td>Wahl- und Parteiensysteme im Vergleich</td>
+<td>Berens</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='05214' href='#05214'></a>05214</td><td>Wahl- und Parteiensysteme im Vergleich</td>
+<td>Röth</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='05215' href='#05215'></a>05215</td><td>Soziologie des Wohlfahrtstaates</td>
+<td>Andreß</td>
+<td>14.07.15</td>
+<td>16:00:00</td>
+<td>04.05.15</td>
+<td>04.05.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='05217' href='#05217'></a>05217</td><td>Vergleichende Politische Ökonomie</td>
+<td>Gross</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='05217' href='#05217'></a>05217</td><td>Vergleichende Politische Ökonomie</td>
+<td>Wederhake</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr ><td><a name='05217' href='#05217'></a>05217</td><td>Vergleichende Politische Ökonomie</td>
+<td>Orban</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='05301' href='#05301'></a>05301</td><td>Sozioökonomische Bildung</td>
+<td>Göckede</td>
+<td>19.05.15</td>
+<td>08:00:00</td>
+<td>05.05.15</td>
+<td>05.05.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='05303' href='#05303'></a>05303</td><td>Aktuelle Fragen der Sozialpsychologie</td>
+<td>Fetchenhauer</td>
+<td>11.07.15</td>
+<td>09:00:00</td>
+<td>14.04.15</td>
+<td>14.04.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='06001' href='#06001'></a>06001</td><td>Einführung in die Methoden der Sozialwissenschaften</td>
+<td>Dülmer</td>
+<td>30.07.15</td>
+<td>14:30:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>3</td>
+</tr>
+<tr ><td><a name='06002' href='#06002'></a>06002</td><td>Einführung in die Soziologie: Mikrosoziologie</td>
+<td>Kroneberg</td>
+<td>27.07.15</td>
+<td>13:15:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>6</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='06003' href='#06003'></a>06003</td><td>Einführung in die Soziologie: Makrosoziologie</td>
+<td>Ebner</td>
+<td>23.07.15</td>
+<td>10:30:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>11</td>
+</tr>
+<tr ><td><a name='06003' href='#06003'></a>06003</td><td>Einführung in die Soziologie: Makrosoziologie</td>
+<td>Ebner</td>
+<td>24.09.15</td>
+<td>08:45:00</td>
+<td>27.08.15</td>
+<td>03.09.15</td>
+<td>wisoapp</td>
+<td>2</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='06005' href='#06005'></a>06005</td><td>Seminar - Netzwerke und Organisationen</td>
+<td>Diverse</td>
+<td>18.05.15</td>
+<td>LS</td>
+<td>04.05.15</td>
+<td>04.05.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr ><td><a name='06006' href='#06006'></a>06006</td><td>Seminar - Struktur und Wandel von Gesellschaften</td>
+<td>Diverse</td>
+<td>18.05.15</td>
+<td>LS</td>
+<td>04.05.15</td>
+<td>04.05.15</td>
+<td>wisoapp</td>
+<td>6</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='06006' href='#06006'></a>06006</td><td>Seminar - Struktur und Wandel von Gesellschaften</td>
+<td>Careja</td>
+<td>14.08.15</td>
+<td>09:00:00</td>
+<td>30.07.15</td>
+<td>30.07.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='06007' href='#06007'></a>06007</td><td>Seminar - Soziologische Theorie</td>
+<td>Wagner</td>
+<td>14.07.15</td>
+<td>14:00:00</td>
+<td>30.06.15</td>
+<td>30.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='06008' href='#06008'></a>06008</td><td>Aktuelle Fragen der Soziologie</td>
+<td>Opp</td>
+<td>28.08.15</td>
+<td>09:00:00</td>
+<td>30.07.15</td>
+<td>30.07.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='06101' href='#06101'></a>06101</td><td>Sozialstrukturanalyse</td>
+<td>Wagner</td>
+<td>29.07.15</td>
+<td>11:00:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>14</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='06201' href='#06201'></a>06201</td><td>Forschungsprojekt Sozialwissenschaften</td>
+<td>Jäger</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>2</td>
+</tr>
+<tr ><td><a name='06301' href='#06301'></a>06301</td><td>Qualitative Methoden: Logik und Qualitative Forschung</td>
+<td>Kunstein</td>
+<td>16.07.15</td>
+<td>08:30:00</td>
+<td>25.06.15</td>
+<td>25.06.15</td>
+<td>wisoapp</td>
+<td>7</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='06302' href='#06302'></a>06302</td><td>Theorie und Methoden der qualitativen Sozialforschung</td>
+<td>Schulz-Nieswandt</td>
+<td>30.07.15</td>
+<td>11:00:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>4</td>
+</tr>
+<tr ><td><a name='06303' href='#06303'></a>06303</td><td>Einführung in die Statistik für Sozialwissenschaftler und CUDA A</td>
+<td>Jacob</td>
+<td>11.07.15</td>
+<td>08:45:00</td>
+<td>22.06.15</td>
+<td>29.06.15</td>
+<td>wisoapp</td>
+<td>5</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='06304' href='#06304'></a>06304</td><td>Wahrscheinlichkeitsrechnung und schließende Statistik und CUDA B (<i>Gribisch/Scheicher</i>)</td>
+<td>Diverse</td>
+<td>11.07.15</td>
+<td>11:00:00</td>
+<td>22.06.15</td>
+<td>29.06.15</td>
+<td>wisoapp</td>
+<td>3</td>
+</tr>
+<tr ><td><a name='06304' href='#06304'></a>06304</td><td>Wahrscheinlichkeitsrechnung und schließende Statistik und CUDA B (<i>Gribisch/Scheicher</i>)</td>
+<td>Diverse</td>
+<td>28.07.15</td>
+<td>08:45:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='07001' href='#07001'></a>07001</td><td>Channel Management</td>
+<td>Reinartz</td>
+<td>20.07.15</td>
+<td>10:30:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>19</td>
+</tr>
+<tr ><td><a name='07001' href='#07001'></a>07001</td><td>Channel Management</td>
+<td>Reinartz</td>
+<td>28.09.15</td>
+<td>10:30:00</td>
+<td>27.08.15</td>
+<td>03.09.15</td>
+<td>wisoapp</td>
+<td>5</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='07002' href='#07002'></a>07002</td><td>Produktion und Logistik</td>
+<td>Tempelmeier</td>
+<td>23.05.15</td>
+<td>15:45:00</td>
+<td>04.05.15</td>
+<td>11.05.15</td>
+<td>wisoapp</td>
+<td>31</td>
+</tr>
+<tr ><td><a name='07002' href='#07002'></a>07002</td><td>Produktion und Logistik</td>
+<td>Tempelmeier</td>
+<td>17.09.15</td>
+<td>15:45:00</td>
+<td>27.08.15</td>
+<td>03.09.15</td>
+<td>wisoapp</td>
+<td>2</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='07003' href='#07003'></a>07003</td><td>Finanzmanagement</td>
+<td>Hartmann-Wendels</td>
+<td>20.07.15</td>
+<td>12:15:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>31</td>
+</tr>
+<tr ><td><a name='07003' href='#07003'></a>07003</td><td>Finanzmanagement</td>
+<td>Hartmann-Wendels</td>
+<td>28.09.15</td>
+<td>08:45:00</td>
+<td>27.08.15</td>
+<td>03.09.15</td>
+<td>wisoapp</td>
+<td>8</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='07004' href='#07004'></a>07004</td><td>Organisation und Personal</td>
+<td>Schröder</td>
+<td>20.07.15</td>
+<td>14:00:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>35</td>
+</tr>
+<tr ><td><a name='07004' href='#07004'></a>07004</td><td>Organisation und Personal</td>
+<td>Schröder</td>
+<td>28.09.15</td>
+<td>12:15:00</td>
+<td>27.08.15</td>
+<td>03.09.15</td>
+<td>wisoapp</td>
+<td>7</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='07005' href='#07005'></a>07005</td><td>Entscheidungstheorie</td>
+<td>Kuntz</td>
+<td>21.07.15</td>
+<td>08:45:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>36</td>
+</tr>
+<tr ><td><a name='07005' href='#07005'></a>07005</td><td>Entscheidungstheorie</td>
+<td>Kuntz</td>
+<td>19.09.15</td>
+<td>12:15:00</td>
+<td>27.08.15</td>
+<td>03.09.15</td>
+<td>wisoapp</td>
+<td>8</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='07006' href='#07006'></a>07006</td><td>Grundlagen externer Rechnungslegung</td>
+<td>Kuhner</td>
+<td>20.07.15</td>
+<td>15:45:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>3</td>
+</tr>
+<tr ><td><a name='07006' href='#07006'></a>07006</td><td>Grundlagen externer Rechnungslegung</td>
+<td>Kuhner</td>
+<td>29.09.15</td>
+<td>14:30:00</td>
+<td>27.08.15</td>
+<td>03.09.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='07008' href='#07008'></a>07008</td><td>Unternehmensführung und internationales Management</td>
+<td>Delfmann</td>
+<td>23.05.15</td>
+<td>10:30:00</td>
+<td>04.05.15</td>
+<td>11.05.15</td>
+<td>wisoapp</td>
+<td>58</td>
+</tr>
+<tr ><td><a name='07008' href='#07008'></a>07008</td><td>Unternehmensführung und internationales Management</td>
+<td>Delfmann</td>
+<td>17.09.15</td>
+<td>10:30:00</td>
+<td>27.08.15</td>
+<td>03.09.15</td>
+<td>wisoapp</td>
+<td>6</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='08001' href='#08001'></a>08001</td><td>Allgemeine Wirtschaftspolitik</td>
+<td>Groneck</td>
+<td>22.07.15</td>
+<td>13:15:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>17</td>
+</tr>
+<tr ><td><a name='08001' href='#08001'></a>08001</td><td>Allgemeine Wirtschaftspolitik</td>
+<td>Groneck</td>
+<td>30.09.15</td>
+<td>10:30:00</td>
+<td>27.08.15</td>
+<td>03.09.15</td>
+<td>wisoapp</td>
+<td>6</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='08004' href='#08004'></a>08004</td><td>Industrieökonomik und Wettbewerb</td>
+<td>Münster</td>
+<td>22.07.15</td>
+<td>11:00:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>32</td>
+</tr>
+<tr ><td><a name='08004' href='#08004'></a>08004</td><td>Industrieökonomik und Wettbewerb</td>
+<td>Münster</td>
+<td>29.09.15</td>
+<td>08:45:00</td>
+<td>27.08.15</td>
+<td>03.09.15</td>
+<td>wisoapp</td>
+<td>3</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='08005' href='#08005'></a>08005</td><td>International Economics</td>
+<td>Prantl</td>
+<td>27.07.15</td>
+<td>11:00:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>21</td>
+</tr>
+<tr ><td><a name='08005' href='#08005'></a>08005</td><td>International Economics</td>
+<td>Prantl</td>
+<td>22.09.15</td>
+<td>11:00:00</td>
+<td>27.08.15</td>
+<td>03.09.15</td>
+<td>wisoapp</td>
+<td>7</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='08007' href='#08007'></a>08007</td><td>Geldtheorie und -politik</td>
+<td>Schabert</td>
+<td>21.07.15</td>
+<td>12:45:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>7</td>
+</tr>
+<tr ><td><a name='08007' href='#08007'></a>08007</td><td>Geldtheorie und -politik</td>
+<td>Schabert</td>
+<td>22.09.15</td>
+<td>15:30:00</td>
+<td>27.08.15</td>
+<td>03.09.15</td>
+<td>wisoapp</td>
+<td>6</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='08008' href='#08008'></a>08008</td><td>Wachstum und Beschäftigung</td>
+<td>Funk</td>
+<td>21.07.15</td>
+<td>15:00:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>12</td>
+</tr>
+<tr ><td><a name='08008' href='#08008'></a>08008</td><td>Wachstum und Beschäftigung</td>
+<td>Funk</td>
+<td>24.09.15</td>
+<td>14:30:00</td>
+<td>27.08.15</td>
+<td>03.09.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='08009' href='#08009'></a>08009</td><td>Arbeitsmarktökonomik</td>
+<td>Krause</td>
+<td>22.07.15</td>
+<td>15:30:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>5</td>
+</tr>
+<tr ><td><a name='08009' href='#08009'></a>08009</td><td>Arbeitsmarktökonomik</td>
+<td>Krause</td>
+<td>24.09.15</td>
+<td>12:15:00</td>
+<td>27.08.15</td>
+<td>03.09.15</td>
+<td>wisoapp</td>
+<td>2</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='08010' href='#08010'></a>08010</td><td>Die deutsche Wirtschaft im 20. Jahrhundert</td>
+<td>Tilly</td>
+<td>24.07.15</td>
+<td>11:00:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>38</td>
+</tr>
+<tr ><td><a name='09001' href='#09001'></a>09001</td><td>Grundfragen zur Berufs- und Wirtschaftspädagogik</td>
+<td>Göckede</td>
+<td>16.07.15</td>
+<td>14:00:00</td>
+<td>02.07.15</td>
+<td>02.07.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='09002' href='#09002'></a>09002</td><td>Theorien der Wirtschaftspädagogik</td>
+<td>Göckede</td>
+<td>23.04.15</td>
+<td>16:00:00</td>
+<td>09.04.15</td>
+<td>09.04.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='09003' href='#09003'></a>09003</td><td>Berufspädagogik</td>
+<td>Pilz</td>
+<td>06.05.15</td>
+<td>18:00:00</td>
+<td>22.04.15</td>
+<td>22.04.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='09005' href='#09005'></a>09005</td><td>Allgemeine Didaktik für berufliche Bildungsgänge</td>
+<td>Göckede</td>
+<td>06.07.15</td>
+<td>LS</td>
+<td>18.05.15</td>
+<td>22.06.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='09006' href='#09006'></a>09006</td><td>Fachdidaktik Wirtschaftswissenschaften</td>
+<td>Buschfeld</td>
+<td>06.07.15</td>
+<td>LS</td>
+<td>18.05.15</td>
+<td>22.06.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='09007' href='#09007'></a>09007</td><td>Grundfragen pädagogischen Handelns</td>
+<td>Buschfeld</td>
+<td>06.07.15</td>
+<td>LS</td>
+<td>18.05.15</td>
+<td>22.06.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='10011' href='#10011'></a>10011</td><td>Politische Theorie und Ideengeschichte</td>
+<td>Leidhold</td>
+<td>30.07.15</td>
+<td>14:00:00</td>
+<td>06.07.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='10012' href='#10012'></a>10012</td><td>Seminar zur Politischen Theorie</td>
+<td>Leidhold</td>
+<td>30.07.15</td>
+<td>12:00:00</td>
+<td>06.07.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='10013' href='#10013'></a>10013</td><td>Seminar zur Internationalen Politik</td>
+<td>Jäger</td>
+<td>29.07.15</td>
+<td>10:00:00</td>
+<td>06.07.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='10014' href='#10014'></a>10014</td><td>Seminar zur Außenpolitikanalyse</td>
+<td>Jäger</td>
+<td>29.07.15</td>
+<td>12:00:00</td>
+<td>06.07.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='10015' href='#10015'></a>10015</td><td>Das politische System der EU: strategische und konzeptionelle Ansätze</td>
+<td>Wessels</td>
+<td>27.07.15</td>
+<td>12:00:00</td>
+<td>06.07.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='10016' href='#10016'></a>10016</td><td>Regieren und Politikgestaltung im EU-Mehrebenensystem</td>
+<td>Wessels</td>
+<td>27.07.15</td>
+<td>14:00:00</td>
+<td>06.07.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr ><td><a name='11001' href='#11001'></a>11001</td><td>Politische und religiöse Ideen</td>
+<td>Halbeisen</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='11001' href='#11001'></a>11001</td><td>Politische und religiöse Ideen</td>
+<td>Kamp</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='11002' href='#11002'></a>11002</td><td>Seminar: Das politische System der EU: strategische und konzeptionelle Ansätze</td>
+<td>Wessels</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='11002' href='#11002'></a>11002</td><td>Seminar: Das politische System der EU: strategische und konzeptionelle Ansätze</td>
+<td>Grossmann</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='11003' href='#11003'></a>11003</td><td>Seminar: Vergleichende Analyse Politischer Institutionen</td>
+<td>Kaiser</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='11003' href='#11003'></a>11003</td><td>Seminar: Vergleichende Analyse Politischer Institutionen</td>
+<td>Sauermann</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='11003' href='#11003'></a>11003</td><td>Seminar: Vergleichende Analyse Politischer Institutionen</td>
+<td>Spies</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='11004' href='#11004'></a>11004</td><td>Forschungsprojekt Außenpolitik</td>
+<td>Zimmer</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='11006' href='#11006'></a>11006</td><td>Forschungsprojekt Das politische System der EU</td>
+<td>Wessels</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='11007' href='#11007'></a>11007</td><td>Seminar: Vergleichende Analyse Politischer Ökonomie</td>
+<td>Spies</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='11008' href='#11008'></a>11008</td><td>Forschungsprojekt Internationale Politik</td>
+<td>Liedtke</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='11008' href='#11008'></a>11008</td><td>Forschungsprojekt Internationale Politik</td>
+<td>Mey</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='12001' href='#12001'></a>12001</td><td>Forschungsprojekt Empirische Sozialforschung</td>
+<td>Hank</td>
+<td>18.05.15</td>
+<td>LS</td>
+<td>04.05.15</td>
+<td>04.05.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='12006' href='#12006'></a>12006</td><td>Kontexte sozialen Handelns</td>
+<td>Friedrichs</td>
+<td>18.05.15</td>
+<td>LS</td>
+<td>04.05.15</td>
+<td>04.05.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='12007' href='#12007'></a>12007</td><td>Märkte, Institutionen und Organisationen</td>
+<td>Diverse</td>
+<td>18.05.15</td>
+<td>LS</td>
+<td>04.05.15</td>
+<td>04.05.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='12008' href='#12008'></a>12008</td><td>Sozialer Wandel</td>
+<td>Diverse</td>
+<td>18.05.15</td>
+<td>LS</td>
+<td>04.05.15</td>
+<td>04.05.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='12010' href='#12010'></a>12010</td><td>Vergleichende Sozialforschung</td>
+<td>Wagner</td>
+<td>18.05.15</td>
+<td>LS</td>
+<td>04.05.15</td>
+<td>04.05.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='12011' href='#12011'></a>12011</td><td>Politische Soziologie</td>
+<td>Dülmer</td>
+<td>18.05.15</td>
+<td>LS</td>
+<td>04.05.15</td>
+<td>04.05.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='12012' href='#12012'></a>12012</td><td>Einstellungen, Normen und Werte</td>
+<td>Sattler</td>
+<td>18.05.15</td>
+<td>LS</td>
+<td>04.05.15</td>
+<td>04.05.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='13008' href='#13008'></a>13008</td><td>Grundlagen sozialwissenschaftlichen Arbeitens</td>
+<td>Riedel</td>
+<td>27.07.15</td>
+<td>10:00:00</td>
+<td>13.07.15</td>
+<td>13.07.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='13011' href='#13011'></a>13011</td><td>Spezielle Erhebungsverfahren</td>
+<td>Riedel</td>
+<td>06.07.15</td>
+<td>14:00:00</td>
+<td>22.06.15</td>
+<td>22.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='13012' href='#13012'></a>13012</td><td>Spezielle Analyseverfahren I</td>
+<td>Beier</td>
+<td>16.07.15</td>
+<td>14:00:00</td>
+<td>02.07.15</td>
+<td>02.07.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr ><td><a name='13013' href='#13013'></a>13013</td><td>Spezielle Analyseverfahren II</td>
+<td>Dülmer</td>
+<td>16.07.15</td>
+<td>08:00:00</td>
+<td>02.07.15</td>
+<td>02.07.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='14001' href='#14001'></a>14001</td><td>Fiskalpolitik</td>
+<td>Sachs</td>
+<td>24.07.15</td>
+<td>13:15:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>7</td>
+</tr>
+<tr ><td><a name='14001' href='#14001'></a>14001</td><td>Fiskalpolitik</td>
+<td>Sachs</td>
+<td>30.09.15</td>
+<td>12:45:00</td>
+<td>27.08.15</td>
+<td>03.09.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='14004' href='#14004'></a>14004</td><td>Public Policy and the Labor Market</td>
+<td>Jaeger</td>
+<td>17.07.15</td>
+<td>12:00:00</td>
+<td>03.07.15</td>
+<td>03.07.15</td>
+<td>wisoapp</td>
+<td>4</td>
+</tr>
+<tr ><td><a name='14010' href='#14010'></a>14010</td><td>Public Economics and Mechanism Design (Adv.)</td>
+<td>Bierbrauer</td>
+<td>15.07.15</td>
+<td>12:00:00</td>
+<td>01.07.15</td>
+<td>01.07.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='14101' href='#14101'></a>14101</td><td>Seminar Macroeconomics</td>
+<td>Heinen</td>
+<td>06.06.15</td>
+<td>LS</td>
+<td>30.05.15</td>
+<td>30.05.15</td>
+<td>wisoapp</td>
+<td>4</td>
+</tr>
+<tr ><td><a name='14201' href='#14201'></a>14201</td><td>Seminar Public Economics (Bachelor)</td>
+<td>Anderegg</td>
+<td>17.04.15</td>
+<td>LS</td>
+<td>16.04.15</td>
+<td>16.04.15</td>
+<td>wisoapp</td>
+<td>4</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='14301' href='#14301'></a>14301</td><td>Topics in Psychoeconomics</td>
+<td>Alós-Ferrer</td>
+<td>15.07.15</td>
+<td>16:00:00</td>
+<td>01.07.15</td>
+<td>01.07.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='14303' href='#14303'></a>14303</td><td>Psychological Foundations of Economic Decision Making</td>
+<td>Hügelschäfer</td>
+<td>31.07.15</td>
+<td>10:00:00</td>
+<td>17.07.15</td>
+<td>17.07.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='14802' href='#14802'></a>14802</td><td>Topics in Macroeconomics</td>
+<td>Bredemeier</td>
+<td>14.07.15</td>
+<td>10:00:00</td>
+<td>30.06.15</td>
+<td>30.06.15</td>
+<td>wisoapp</td>
+<td>3</td>
+</tr>
+<tr ><td><a name='14804' href='#14804'></a>14804</td><td>Topics in Public Economics II</td>
+<td>Thöne</td>
+<td>16.07.15</td>
+<td>10:00:00</td>
+<td>02.07.15</td>
+<td>02.07.15</td>
+<td>wisoapp</td>
+<td>3</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='14902' href='#14902'></a>14902</td><td>Neue Politische Ökonomik</td>
+<td>Arentz</td>
+<td>16.07.15</td>
+<td>16:00:00</td>
+<td>02.07.15</td>
+<td>02.07.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr ><td><a name='14902' href='#14902'></a>14902</td><td>Neue Politische Ökonomik</td>
+<td>Arentz</td>
+<td>23.09.15</td>
+<td>16:00:00</td>
+<td>09.09.15</td>
+<td>09.09.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='15015' href='#15015'></a>15015</td><td>Dynamische Makroökonomik</td>
+<td>Funk</td>
+<td>14.07.15</td>
+<td>14:00:00</td>
+<td>30.06.15</td>
+<td>30.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='15025' href='#15025'></a>15025</td><td>Advanced Microeconomics II: Game Theory</td>
+<td>Alós-Ferrer</td>
+<td>16.07.15</td>
+<td>16:00:00</td>
+<td>02.07.15</td>
+<td>02.07.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='15030' href='#15030'></a>15030</td><td>Vertragstheorie</td>
+<td>Schmitz</td>
+<td>09.07.15</td>
+<td>12:00:00</td>
+<td>25.06.15</td>
+<td>25.06.15</td>
+<td>wisoapp</td>
+<td>42</td>
+</tr>
+<tr ><td><a name='15031' href='#15031'></a>15031</td><td>Ökonomisches und Soziales Verhalten</td>
+<td>Sutter</td>
+<td>14.07.15</td>
+<td>16:30:00</td>
+<td>30.06.15</td>
+<td>30.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='15031' href='#15031'></a>15031</td><td>Ökonomisches und Soziales Verhalten</td>
+<td>Sutter</td>
+<td>25.08.15</td>
+<td>16:30:00</td>
+<td>11.08.15</td>
+<td>11.08.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr ><td><a name='15033' href='#15033'></a>15033</td><td>Informationsprobleme in Gesundheitsmärkten</td>
+<td>Wambach</td>
+<td>09.05.15</td>
+<td>09:00:00</td>
+<td>25.04.15</td>
+<td>25.04.15</td>
+<td>wisoapp</td>
+<td>25</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='15038' href='#15038'></a>15038</td><td>Medienordnung</td>
+<td>Münster</td>
+<td>14.07.15</td>
+<td>10:00:00</td>
+<td>30.06.15</td>
+<td>30.06.15</td>
+<td>wisoapp</td>
+<td>4</td>
+</tr>
+<tr ><td><a name='15038' href='#15038'></a>15038</td><td>Medienordnung</td>
+<td>Münster</td>
+<td>28.09.15</td>
+<td>10:30:00</td>
+<td>14.09.15</td>
+<td>14.09.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='15040' href='#15040'></a>15040</td><td>Spezielle Wirtschaftspolitik</td>
+<td>Roth</td>
+<td>13.07.15</td>
+<td>10:00:00</td>
+<td>29.06.15</td>
+<td>29.06.15</td>
+<td>wisoapp</td>
+<td>4</td>
+</tr>
+<tr ><td><a name='15040' href='#15040'></a>15040</td><td>Spezielle Wirtschaftspolitik</td>
+<td>Roth</td>
+<td>21.09.15</td>
+<td>10:00:00</td>
+<td>07.09.15</td>
+<td>07.09.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='15050' href='#15050'></a>15050</td><td>Behavioral Economics</td>
+<td>Lauer</td>
+<td>13.07.15</td>
+<td>18:00:00</td>
+<td>29.06.15</td>
+<td>29.06.15</td>
+<td>wisoapp</td>
+<td>4</td>
+</tr>
+<tr ><td><a name='15050' href='#15050'></a>15050</td><td>Behavioral Economics</td>
+<td>Lauer</td>
+<td>07.09.15</td>
+<td>10:00:00</td>
+<td>24.08.15</td>
+<td>24.08.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='15051' href='#15051'></a>15051</td><td>Development Economics</td>
+<td>Schelkle</td>
+<td>16.07.15</td>
+<td>10:00:00</td>
+<td>02.07.15</td>
+<td>02.07.15</td>
+<td>wisoapp</td>
+<td>2</td>
+</tr>
+<tr ><td><a name='15069' href='#15069'></a>15069</td><td>Advanced Macroeconomics II: Business Cycles</td>
+<td>Braun</td>
+<td>16.07.15</td>
+<td>12:00:00</td>
+<td>02.07.15</td>
+<td>02.07.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='15078' href='#15078'></a>15078</td><td>Microeconomics II: Game Theory</td>
+<td>Rockenbach</td>
+<td>14.07.15</td>
+<td>16:00:00</td>
+<td>30.06.15</td>
+<td>30.06.15</td>
+<td>wisoapp</td>
+<td>10</td>
+</tr>
+<tr ><td><a name='15078' href='#15078'></a>15078</td><td>Microeconomics II: Game Theory</td>
+<td>Rockenbach</td>
+<td>08.09.15</td>
+<td>16:00:00</td>
+<td>25.08.15</td>
+<td>25.08.15</td>
+<td>wisoapp</td>
+<td>4</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='15079' href='#15079'></a>15079</td><td>Money and Banking</td>
+<td>Schabert</td>
+<td>15.07.15</td>
+<td>12:00:00</td>
+<td>01.07.15</td>
+<td>01.07.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr ><td><a name='15080' href='#15080'></a>15080</td><td>Regulation: Theory and Practice (Adv.)</td>
+<td>Höffler</td>
+<td>14.07.15</td>
+<td>17:45:00</td>
+<td>30.06.15</td>
+<td>30.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='15101' href='#15101'></a>15101</td><td>Economics, Strategy and Management</td>
+<td>Gürtler</td>
+<td>27.04.15</td>
+<td>LS</td>
+<td>16.03.15</td>
+<td>24.04.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='15103' href='#15103'></a>15103</td><td>Spieltheorie und strategisches Denken</td>
+<td>Werner</td>
+<td>21.07.15</td>
+<td>10:30:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>70</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='15103' href='#15103'></a>15103</td><td>Spieltheorie und strategisches Denken</td>
+<td>Werner</td>
+<td>22.09.15</td>
+<td>13:15:00</td>
+<td>27.08.15</td>
+<td>03.09.15</td>
+<td>wisoapp</td>
+<td>14</td>
+</tr>
+<tr ><td><a name='15301' href='#15301'></a>15301</td><td>Aktuelle Fragen der Wirtschaftspolitik</td>
+<td>Lindener</td>
+<td>17.04.15</td>
+<td>LS</td>
+<td>16.04.15</td>
+<td>16.04.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='15402' href='#15402'></a>15402</td><td>Makroökonomik II: Arbeitslosigkeit und Inflation</td>
+<td>Krause</td>
+<td>16.07.15</td>
+<td>14:00:00</td>
+<td>02.07.15</td>
+<td>02.07.15</td>
+<td>wisoapp</td>
+<td>6</td>
+</tr>
+<tr ><td><a name='15505' href='#15505'></a>15505</td><td>Portfolio Choice and Asset Pricing</td>
+<td>Scheffel</td>
+<td>15.07.15</td>
+<td>10:00:00</td>
+<td>01.07.15</td>
+<td>01.07.15</td>
+<td>wisoapp</td>
+<td>2</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='15506' href='#15506'></a>15506</td><td>Selected Topics: Markets and Institutions</td>
+<td>Alós-Ferrer</td>
+<td>17.07.15</td>
+<td>10:00:00</td>
+<td>03.07.15</td>
+<td>03.07.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='15506' href='#15506'></a>15506</td><td>Selected Topics: Markets and Institutions</td>
+<td>Jaeger</td>
+<td>14.08.15</td>
+<td>09:00:00</td>
+<td>30.07.15</td>
+<td>30.07.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='15511' href='#15511'></a>15511</td><td>Seminar Economic Design and Behavior (<i>Vergabeverfahren der VWL</i>)</td>
+<td>Nardotto</td>
+<td>14.04.15</td>
+<td>LS</td>
+<td>28.01.15</td>
+<td>31.03.15</td>
+<td>Lehrstuhl</td>
+<td>15</td>
+</tr>
+<tr ><td><a name='15511' href='#15511'></a>15511</td><td>Seminar Economic Design and Behavior (<i>Vergabeverfahren der VWL</i>)</td>
+<td>Weiß</td>
+<td>04.05.15</td>
+<td>LS</td>
+<td>28.01.15</td>
+<td>20.04.15</td>
+<td>Lehrstuhl</td>
+<td>3</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='15511' href='#15511'></a>15511</td><td>Seminar Economic Design and Behavior (<i>Vergabeverfahren der VWL</i>)</td>
+<td>Weiß</td>
+<td>04.05.15</td>
+<td>LS</td>
+<td>28.01.15</td>
+<td>20.04.15</td>
+<td>Lehrstuhl</td>
+<td>8</td>
+</tr>
+<tr ><td><a name='15512' href='#15512'></a>15512</td><td>Seminar Macroeconomics, Growth and Inequality (<i>Vergabeverfahren der VWL</i>)</td>
+<td>Jaeger</td>
+<td>07.04.15</td>
+<td>LS</td>
+<td>28.01.15</td>
+<td>24.03.15</td>
+<td>Lehrstuhl</td>
+<td>14</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='15514' href='#15514'></a>15514</td><td>Seminar Markets and Institutions (<i>Vergabeverfahren der VWL</i>)</td>
+<td>Wambach</td>
+<td>09.04.15</td>
+<td>LS</td>
+<td>28.01.15</td>
+<td>26.03.15</td>
+<td>Lehrstuhl</td>
+<td>10</td>
+</tr>
+<tr ><td><a name='15514' href='#15514'></a>15514</td><td>Seminar Markets and Institutions (<i>Vergabeverfahren der VWL</i>)</td>
+<td>Wambach</td>
+<td>09.04.15</td>
+<td>LS</td>
+<td>28.01.15</td>
+<td>26.03.15</td>
+<td>Lehrstuhl</td>
+<td>10</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='15514' href='#15514'></a>15514</td><td>Seminar Markets and Institutions (<i>Vergabeverfahren der VWL</i>)</td>
+<td>Nardotto</td>
+<td>14.04.15</td>
+<td>LS</td>
+<td>28.01.15</td>
+<td>31.03.15</td>
+<td>Lehrstuhl</td>
+<td>9</td>
+</tr>
+<tr ><td><a name='15514' href='#15514'></a>15514</td><td>Seminar Markets and Institutions (<i>Vergabeverfahren der VWL</i>)</td>
+<td>Weiß</td>
+<td>04.05.15</td>
+<td>LS</td>
+<td>28.01.15</td>
+<td>20.04.15</td>
+<td>Lehrstuhl</td>
+<td>1</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='15514' href='#15514'></a>15514</td><td>Seminar Markets and Institutions (<i>Vergabeverfahren der VWL</i>)</td>
+<td>Weiß</td>
+<td>04.05.15</td>
+<td>LS</td>
+<td>28.01.15</td>
+<td>20.04.15</td>
+<td>Lehrstuhl</td>
+<td>12</td>
+</tr>
+<tr ><td><a name='15515' href='#15515'></a>15515</td><td>Seminar Public Economics (Master) (<i>Vergabeverfahren der VWL</i>)</td>
+<td>Thöne</td>
+<td>21.04.15</td>
+<td>LS</td>
+<td>28.01.15</td>
+<td>07.04.15</td>
+<td>Lehrstuhl</td>
+<td>11</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='15515' href='#15515'></a>15515</td><td>Seminar Public Economics (Master) (<i>Vergabeverfahren der VWL</i>)</td>
+<td>Weiß</td>
+<td>04.05.15</td>
+<td>LS</td>
+<td>28.01.15</td>
+<td>20.04.15</td>
+<td>Lehrstuhl</td>
+<td>1</td>
+</tr>
+<tr ><td><a name='15515' href='#15515'></a>15515</td><td>Seminar Public Economics (Master) (<i>Vergabeverfahren der VWL</i>)</td>
+<td>Weiß</td>
+<td>04.05.15</td>
+<td>LS</td>
+<td>28.01.15</td>
+<td>20.04.15</td>
+<td>Lehrstuhl</td>
+<td>1</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='15603' href='#15603'></a>15603</td><td>Competition Policy</td>
+<td>Höffler</td>
+<td>22.09.15</td>
+<td>10:00:00</td>
+<td>08.09.15</td>
+<td>08.09.15</td>
+<td>wisoapp</td>
+<td>2</td>
+</tr>
+<tr ><td><a name='15604' href='#15604'></a>15604</td><td>Behavioral Economic Theory (Adv.)</td>
+<td>Alós-Ferrer</td>
+<td>17.07.15</td>
+<td>14:00:00</td>
+<td>03.07.15</td>
+<td>03.07.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='15701' href='#15701'></a>15701</td><td>Selected Topics: Macroeconomics, Growth and Inequality</td>
+<td>Jaeger</td>
+<td>14.08.15</td>
+<td>09:00:00</td>
+<td>30.07.15</td>
+<td>30.07.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='16001' href='#16001'></a>16001</td><td>Bankmanagement</td>
+<td>Hartmann-Wendels</td>
+<td>14.07.15</td>
+<td>10:30:00</td>
+<td>30.06.15</td>
+<td>30.06.15</td>
+<td>wisoapp</td>
+<td>18</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='16001' href='#16001'></a>16001</td><td>Bankmanagement</td>
+<td>Hartmann-Wendels</td>
+<td>30.09.15</td>
+<td>15:30:00</td>
+<td>16.09.15</td>
+<td>16.09.15</td>
+<td>wisoapp</td>
+<td>2</td>
+</tr>
+<tr ><td><a name='16002' href='#16002'></a>16002</td><td>Risikomanagement in Banken</td>
+<td>Hartmann-Wendels</td>
+<td>05.06.15</td>
+<td>08:30:00</td>
+<td>22.05.15</td>
+<td>22.05.15</td>
+<td>wisoapp</td>
+<td>11</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='16003' href='#16003'></a>16003</td><td>Institutionenökonomik</td>
+<td>Hartmann-Wendels</td>
+<td>08.07.15</td>
+<td>08:30:00</td>
+<td>24.06.15</td>
+<td>24.06.15</td>
+<td>wisoapp</td>
+<td>12</td>
+</tr>
+<tr ><td><a name='16004' href='#16004'></a>16004</td><td>Investmentbanking</td>
+<td>Spörk</td>
+<td>01.06.15</td>
+<td>08:30:00</td>
+<td>18.05.15</td>
+<td>18.05.15</td>
+<td>wisoapp</td>
+<td>4</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='16005' href='#16005'></a>16005</td><td>Management von Leasinggesellschaften</td>
+<td>Hartmann-Wendels</td>
+<td>16.07.15</td>
+<td>14:30:00</td>
+<td>02.07.15</td>
+<td>02.07.15</td>
+<td>wisoapp</td>
+<td>3</td>
+</tr>
+<tr ><td><a name='16006' href='#16006'></a>16006</td><td>Ausgewählte Probleme der Bankbetriebslehre I</td>
+<td>Hartmann-Wendels</td>
+<td>03.07.15</td>
+<td>10:30:00</td>
+<td>12.06.15</td>
+<td>26.06.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='16101' href='#16101'></a>16101</td><td>Ausgewählte Probleme der Bankbetriebslehre</td>
+<td>Hartmann-Wendels</td>
+<td>03.07.15</td>
+<td>10:30:00</td>
+<td>12.06.15</td>
+<td>26.06.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='16102' href='#16102'></a>16102</td><td>Fixed Income Management</td>
+<td>Bethke</td>
+<td>10.04.15</td>
+<td>10:00:00</td>
+<td>26.03.15</td>
+<td>26.03.15</td>
+<td>wisoapp</td>
+<td>14</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='17001' href='#17001'></a>17001</td><td>New Product Management</td>
+<td>Pfeiffer</td>
+<td>24.04.15</td>
+<td>09:00:00</td>
+<td>10.04.15</td>
+<td>10.04.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='17005' href='#17005'></a>17005</td><td>Markenpolitik</td>
+<td>Völckner</td>
+<td>01.06.15</td>
+<td>14:30:00</td>
+<td>18.05.15</td>
+<td>18.05.15</td>
+<td>wisoapp</td>
+<td>11</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='17005' href='#17005'></a>17005</td><td>Markenpolitik</td>
+<td>Völckner</td>
+<td>01.09.15</td>
+<td>10:30:00</td>
+<td>18.08.15</td>
+<td>18.08.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr ><td><a name='18002' href='#18002'></a>18002</td><td>Derivate</td>
+<td>Gehde-Trapp</td>
+<td>03.06.15</td>
+<td>08:30:00</td>
+<td>20.05.15</td>
+<td>20.05.15</td>
+<td>wisoapp</td>
+<td>20</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='18002' href='#18002'></a>18002</td><td>Derivate</td>
+<td>Gehde-Trapp</td>
+<td>23.09.15</td>
+<td>14:30:00</td>
+<td>09.09.15</td>
+<td>09.09.15</td>
+<td>wisoapp</td>
+<td>3</td>
+</tr>
+<tr ><td><a name='18004' href='#18004'></a>18004</td><td>Asset Management</td>
+<td>Kempf</td>
+<td>25.07.15</td>
+<td>10:00:00</td>
+<td>11.07.15</td>
+<td>11.07.15</td>
+<td>wisoapp</td>
+<td>12</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='18004' href='#18004'></a>18004</td><td>Asset Management</td>
+<td>Kempf</td>
+<td>18.09.15</td>
+<td>10:00:00</td>
+<td>04.09.15</td>
+<td>04.09.15</td>
+<td>wisoapp</td>
+<td>3</td>
+</tr>
+<tr ><td><a name='18009' href='#18009'></a>18009</td><td>Ausgewählte Fragen der Finanzierungslehre</td>
+<td>Pütz</td>
+<td>25.04.15</td>
+<td>10:00:00</td>
+<td>11.04.15</td>
+<td>11.04.15</td>
+<td>wisoapp</td>
+<td>4</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='19001' href='#19001'></a>19001</td><td>Grundlagen der Besteuerung</td>
+<td>Overesch</td>
+<td>16.07.15</td>
+<td>17:45:00</td>
+<td>30.06.15</td>
+<td>30.06.15</td>
+<td>wisoapp</td>
+<td>3</td>
+</tr>
+<tr ><td><a name='19002' href='#19002'></a>19002</td><td>Unternehmensbesteuerung</td>
+<td>Overesch</td>
+<td>15.07.15</td>
+<td>10:00:00</td>
+<td>30.06.15</td>
+<td>30.06.15</td>
+<td>wisoapp</td>
+<td>3</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='19003' href='#19003'></a>19003</td><td>Betriebswirtschaftliche Steuerlehre I</td>
+<td>Overesch</td>
+<td>08.04.15</td>
+<td>14:00:00</td>
+<td>20.03.15</td>
+<td>20.03.15</td>
+<td>wisoapp</td>
+<td>14</td>
+</tr>
+<tr ><td><a name='19004' href='#19004'></a>19004</td><td>Betriebswirtschaftliche Steuerlehre II</td>
+<td>Overesch</td>
+<td>15.07.15</td>
+<td>10:00:00</td>
+<td>30.06.15</td>
+<td>30.06.15</td>
+<td>wisoapp</td>
+<td>5</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='19302' href='#19302'></a>19302</td><td>International Taxation</td>
+<td>Overesch</td>
+<td>13.07.15</td>
+<td>17:45:00</td>
+<td>30.06.15</td>
+<td>30.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='19502' href='#19502'></a>19502</td><td>Ausgewählte Fragestellungen der Betriebswirtschaftlichen Steuerlehre II</td>
+<td>Overesch</td>
+<td>13.07.15</td>
+<td>17:45:00</td>
+<td>30.06.15</td>
+<td>30.06.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='20003' href='#20003'></a>20003</td><td>Value-Based Controlling</td>
+<td>Homburg</td>
+<td>06.08.15</td>
+<td>14:30:00</td>
+<td>23.07.15</td>
+<td>23.07.15</td>
+<td>wisoapp</td>
+<td>7</td>
+</tr>
+<tr ><td><a name='20004' href='#20004'></a>20004</td><td>Ausgewählte Fragen des Controlling</td>
+<td>Homburg</td>
+<td>05.08.15</td>
+<td>11:00:00</td>
+<td>22.07.15</td>
+<td>22.07.15</td>
+<td>wisoapp</td>
+<td>6</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='21001' href='#21001'></a>21001</td><td>Finanzierungspolitik und Investitionsmanagement</td>
+<td>Hess</td>
+<td>23.05.15</td>
+<td>14:00:00</td>
+<td>04.05.15</td>
+<td>11.05.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='21001' href='#21001'></a>21001</td><td>Finanzierungspolitik und Investitionsmanagement</td>
+<td>Hess</td>
+<td>17.09.15</td>
+<td>14:00:00</td>
+<td>27.08.15</td>
+<td>03.09.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='21002' href='#21002'></a>21002</td><td>Corporate Valuation Theory</td>
+<td>Hess</td>
+<td>30.07.15</td>
+<td>16:15:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>8</td>
+</tr>
+<tr ><td><a name='21004' href='#21004'></a>21004</td><td>Empirical Finance</td>
+<td>Hess</td>
+<td>29.07.15</td>
+<td>16:15:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>4</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='21101' href='#21101'></a>21101</td><td>Corporate Finance</td>
+<td>Hess</td>
+<td>23.05.15</td>
+<td>14:00:00</td>
+<td>04.05.15</td>
+<td>11.05.15</td>
+<td>wisoapp</td>
+<td>28</td>
+</tr>
+<tr ><td><a name='21101' href='#21101'></a>21101</td><td>Corporate Finance</td>
+<td>Hess</td>
+<td>17.09.15</td>
+<td>14:00:00</td>
+<td>27.08.15</td>
+<td>03.09.15</td>
+<td>wisoapp</td>
+<td>2</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='21102' href='#21102'></a>21102</td><td>Investment Management</td>
+<td>Kempf</td>
+<td>28.07.15</td>
+<td>12:45:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>13</td>
+</tr>
+<tr ><td><a name='21102' href='#21102'></a>21102</td><td>Investment Management</td>
+<td>Kempf</td>
+<td>28.09.15</td>
+<td>14:00:00</td>
+<td>27.08.15</td>
+<td>03.09.15</td>
+<td>wisoapp</td>
+<td>4</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='21103' href='#21103'></a>21103</td><td>Leasing</td>
+<td>Hartmann-Wendels</td>
+<td>02.06.15</td>
+<td>08:30:00</td>
+<td>19.05.15</td>
+<td>19.05.15</td>
+<td>wisoapp</td>
+<td>5</td>
+</tr>
+<tr ><td><a name='21301' href='#21301'></a>21301</td><td>Ausgewählte Fragestellungen in Finance</td>
+<td>Pütz</td>
+<td>25.04.15</td>
+<td>10:00:00</td>
+<td>11.04.15</td>
+<td>11.04.15</td>
+<td>wisoapp</td>
+<td>13</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='21301' href='#21301'></a>21301</td><td>Ausgewählte Fragestellungen in Finance</td>
+<td>Hartmann-Wendels</td>
+<td>03.07.15</td>
+<td>10:30:00</td>
+<td>12.06.15</td>
+<td>26.06.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='22001' href='#22001'></a>22001</td><td>Strategic Management in Retailing</td>
+<td>Reinartz</td>
+<td>29.06.15</td>
+<td>14:00:00</td>
+<td>15.06.15</td>
+<td>15.06.15</td>
+<td>wisoapp</td>
+<td>6</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='22001' href='#22001'></a>22001</td><td>Strategic Management in Retailing</td>
+<td>Reinartz</td>
+<td>07.08.15</td>
+<td>15:00:00</td>
+<td>24.07.15</td>
+<td>24.07.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='22002' href='#22002'></a>22002</td><td>Retail Marketing</td>
+<td>Reinartz</td>
+<td>22.05.15</td>
+<td>12:00:00</td>
+<td>08.05.15</td>
+<td>08.05.15</td>
+<td>wisoapp</td>
+<td>11</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='22002' href='#22002'></a>22002</td><td>Retail Marketing</td>
+<td>Reinartz</td>
+<td>02.07.15</td>
+<td>12:00:00</td>
+<td>18.06.15</td>
+<td>18.06.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr ><td><a name='22010' href='#22010'></a>22010</td><td>Customer Relationship Management</td>
+<td>Breitbarth</td>
+<td>14.08.15</td>
+<td>09:00:00</td>
+<td>30.07.15</td>
+<td>30.07.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='22010' href='#22010'></a>22010</td><td>Customer Relationship Management</td>
+<td>Breitbarth</td>
+<td>28.08.15</td>
+<td>09:00:00</td>
+<td>30.07.15</td>
+<td>14.08.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='23201' href='#23201'></a>23201</td><td>Management chronischer Krankheiten</td>
+<td>Müller</td>
+<td>04.08.15</td>
+<td>14:00:00</td>
+<td>21.07.15</td>
+<td>21.07.15</td>
+<td>wisoapp</td>
+<td>8</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='24005' href='#24005'></a>24005</td><td>Ausgewählte Fragestellungen des Marketing</td>
+<td>Müller</td>
+<td>08.05.15</td>
+<td>09:00:00</td>
+<td>24.04.15</td>
+<td>24.04.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='24007' href='#24007'></a>24007</td><td>Marketing Performance Management</td>
+<td>Fischer</td>
+<td>06.08.15</td>
+<td>12:00:00</td>
+<td>23.07.15</td>
+<td>23.07.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='24007' href='#24007'></a>24007</td><td>Marketing Performance Management</td>
+<td>Fischer</td>
+<td>15.09.15</td>
+<td>10:00:00</td>
+<td>01.09.15</td>
+<td>01.09.15</td>
+<td>wisoapp</td>
+<td>3</td>
+</tr>
+<tr ><td><a name='24105' href='#24105'></a>24105</td><td>Concepts of Marketing Mix Management</td>
+<td>Fischer</td>
+<td>06.08.15</td>
+<td>10:00:00</td>
+<td>23.07.15</td>
+<td>23.07.15</td>
+<td>wisoapp</td>
+<td>10</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='24105' href='#24105'></a>24105</td><td>Concepts of Marketing Mix Management</td>
+<td>Fischer</td>
+<td>15.09.15</td>
+<td>12:00:00</td>
+<td>01.09.15</td>
+<td>01.09.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr ><td><a name='24201' href='#24201'></a>24201</td><td>Strategisches Messemanagement</td>
+<td>Völckner</td>
+<td>13.07.15</td>
+<td>14:00:00</td>
+<td>29.06.15</td>
+<td>29.06.15</td>
+<td>wisoapp</td>
+<td>5</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='24201' href='#24201'></a>24201</td><td>Strategisches Messemanagement</td>
+<td>Völckner</td>
+<td>21.09.15</td>
+<td>14:00:00</td>
+<td>07.09.15</td>
+<td>07.09.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='24301' href='#24301'></a>24301</td><td>Practical Applications in Retailing</td>
+<td>Linzbach</td>
+<td>05.06.15</td>
+<td>12:00:00</td>
+<td>21.04.15</td>
+<td>21.04.15</td>
+<td>wisoapp</td>
+<td>2</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='25001' href='#25001'></a>25001</td><td>Enterprises, Markets and Strategies</td>
+<td>Loebbecke</td>
+<td>10.07.15</td>
+<td>10:00:00</td>
+<td>26.06.15</td>
+<td>26.06.15</td>
+<td>wisoapp</td>
+<td>2</td>
+</tr>
+<tr ><td><a name='25002' href='#25002'></a>25002</td><td>Media and Information Systems: Technologies, Applications, Economics of Digital Goods</td>
+<td>Loebbecke</td>
+<td>10.04.15</td>
+<td>12:30:00</td>
+<td>27.03.15</td>
+<td>27.03.15</td>
+<td>wisoapp</td>
+<td>3</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='25005' href='#25005'></a>25005</td><td>Media and Technology Management Seminar</td>
+<td>Loebbecke</td>
+<td>08.04.15</td>
+<td>11:00:00</td>
+<td>25.03.15</td>
+<td>25.03.15</td>
+<td>Lehrstuhl</td>
+<td>13</td>
+</tr>
+<tr ><td><a name='25008' href='#25008'></a>25008</td><td>Selected Media and Technology Topics</td>
+<td>Loebbecke</td>
+<td>08.04.15</td>
+<td>11:00:00</td>
+<td>25.03.15</td>
+<td>25.03.15</td>
+<td>Lehrstuhl</td>
+<td>13</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='25101' href='#25101'></a>25101</td><td>Medienunternehmen und -technologien: Einführung in Managementthemen</td>
+<td>Loebbecke</td>
+<td>10.04.15</td>
+<td>12:30:00</td>
+<td>27.03.15</td>
+<td>27.03.15</td>
+<td>wisoapp</td>
+<td>3</td>
+</tr>
+<tr ><td><a name='25103' href='#25103'></a>25103</td><td>International Media and Technology Project</td>
+<td>Loebbecke</td>
+<td>09.04.15</td>
+<td>11:00:00</td>
+<td>26.03.15</td>
+<td>26.03.15</td>
+<td>Lehrstuhl</td>
+<td>4</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='26002' href='#26002'></a>26002</td><td>Economics of Incentives in Organizations (Adv.)</td>
+<td>Sliwka</td>
+<td>17.07.15</td>
+<td>14:15:00</td>
+<td>03.07.15</td>
+<td>03.07.15</td>
+<td>wisoapp</td>
+<td>2</td>
+</tr>
+<tr ><td><a name='26002' href='#26002'></a>26002</td><td>Economics of Incentives in Organizations (Adv.)</td>
+<td>Sliwka</td>
+<td>15.09.15</td>
+<td>10:15:00</td>
+<td>01.09.15</td>
+<td>01.09.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='26005' href='#26005'></a>26005</td><td>Human Resource Management</td>
+<td>Heinz</td>
+<td>16.07.15</td>
+<td>14:15:00</td>
+<td>02.07.15</td>
+<td>02.07.15</td>
+<td>wisoapp</td>
+<td>14</td>
+</tr>
+<tr ><td><a name='26005' href='#26005'></a>26005</td><td>Human Resource Management</td>
+<td>Heinz</td>
+<td>15.09.15</td>
+<td>12:15:00</td>
+<td>01.09.15</td>
+<td>01.09.15</td>
+<td>wisoapp</td>
+<td>2</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='27003' href='#27003'></a>27003</td><td>Supply Chain Operations</td>
+<td>Thonemann</td>
+<td>29.05.15</td>
+<td>10:00:00</td>
+<td>15.05.15</td>
+<td>15.05.15</td>
+<td>wisoapp</td>
+<td>13</td>
+</tr>
+<tr ><td><a name='27004' href='#27004'></a>27004</td><td>Trends im Supply Chain Management</td>
+<td>Fröhlich</td>
+<td>13.07.15</td>
+<td>14:00:00</td>
+<td>29.06.15</td>
+<td>29.06.15</td>
+<td>wisoapp</td>
+<td>9</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='27004' href='#27004'></a>27004</td><td>Trends im Supply Chain Management</td>
+<td>Mantin</td>
+<td>28.08.15</td>
+<td>09:00:00</td>
+<td>31.07.15</td>
+<td>14.08.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='27102' href='#27102'></a>27102</td><td>Supply Chain Management and Management Science</td>
+<td>Protopappa-Sieke</td>
+<td>29.05.15</td>
+<td>14:00:00</td>
+<td>15.05.15</td>
+<td>15.05.15</td>
+<td>wisoapp</td>
+<td>10</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='27103' href='#27103'></a>27103</td><td>Supply Chain Management und Produktion</td>
+<td>Antweiler</td>
+<td>16.07.15</td>
+<td>08:15:00</td>
+<td>02.07.15</td>
+<td>02.07.15</td>
+<td>wisoapp</td>
+<td>9</td>
+</tr>
+<tr ><td><a name='27103' href='#27103'></a>27103</td><td>Supply Chain Management und Produktion</td>
+<td>Antweiler</td>
+<td>23.09.15</td>
+<td>08:15:00</td>
+<td>09.09.15</td>
+<td>09.09.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='27104' href='#27104'></a>27104</td><td>Current Topics of Supply Chain Management</td>
+<td>Sachs</td>
+<td>17.07.15</td>
+<td>14:00:00</td>
+<td>03.07.15</td>
+<td>03.07.15</td>
+<td>wisoapp</td>
+<td>4</td>
+</tr>
+<tr ><td><a name='27201' href='#27201'></a>27201</td><td>Selected Issues in Supply Chain Management</td>
+<td>Mantin</td>
+<td>28.08.15</td>
+<td>09:00:00</td>
+<td>31.07.15</td>
+<td>14.08.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='28002' href='#28002'></a>28002</td><td>Supply Chain Management und Produktion II (Prozesse)</td>
+<td>Tempelmeier</td>
+<td>14.07.15</td>
+<td>08:15:00</td>
+<td>30.06.15</td>
+<td>30.06.15</td>
+<td>wisoapp</td>
+<td>7</td>
+</tr>
+<tr ><td><a name='28002' href='#28002'></a>28002</td><td>Supply Chain Management und Produktion II (Prozesse)</td>
+<td>Tempelmeier</td>
+<td>21.09.15</td>
+<td>08:15:00</td>
+<td>07.09.15</td>
+<td>07.09.15</td>
+<td>wisoapp</td>
+<td>3</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='28010' href='#28010'></a>28010</td><td>Softwaresysteme für Supply Chain Management und Produktion</td>
+<td>Tempelmeier</td>
+<td>03.07.15</td>
+<td>12:00:00</td>
+<td>19.06.15</td>
+<td>19.06.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr ><td><a name='29001' href='#29001'></a>29001</td><td>Organisationsgestaltung</td>
+<td>Ebers</td>
+<td>22.05.15</td>
+<td>16:30:00</td>
+<td>08.05.15</td>
+<td>08.05.15</td>
+<td>wisoapp</td>
+<td>26</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='29001' href='#29001'></a>29001</td><td>Organisationsgestaltung</td>
+<td>Ebers</td>
+<td>21.09.15</td>
+<td>16:30:00</td>
+<td>07.09.15</td>
+<td>07.09.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='29002' href='#29002'></a>29002</td><td>Corporate Development</td>
+<td>Ebers</td>
+<td>24.04.15</td>
+<td>16:30:00</td>
+<td>10.04.15</td>
+<td>10.04.15</td>
+<td>wisoapp</td>
+<td>51</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='29003' href='#29003'></a>29003</td><td>Organisationstheorien</td>
+<td>Ebers</td>
+<td>17.07.15</td>
+<td>16:30:00</td>
+<td>03.07.15</td>
+<td>03.07.15</td>
+<td>wisoapp</td>
+<td>11</td>
+</tr>
+<tr ><td><a name='29003' href='#29003'></a>29003</td><td>Organisationstheorien</td>
+<td>Ebers</td>
+<td>21.09.15</td>
+<td>14:30:00</td>
+<td>07.09.15</td>
+<td>07.09.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='29102' href='#29102'></a>29102</td><td>Business Ethics</td>
+<td>Irlenbusch</td>
+<td>15.07.15</td>
+<td>14:00:00</td>
+<td>01.07.15</td>
+<td>01.07.15</td>
+<td>wisoapp</td>
+<td>4</td>
+</tr>
+<tr ><td><a name='29201' href='#29201'></a>29201</td><td>Business Project / Research Project zur Unternehmensentwicklung</td>
+<td>Semrau</td>
+<td>08.05.15</td>
+<td>LS</td>
+<td>24.04.15</td>
+<td>24.04.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='29203' href='#29203'></a>29203</td><td>Business Project / Research Project zum Human Resource Management</td>
+<td>Sliwka</td>
+<td>01.07.15</td>
+<td>12:00:00</td>
+<td>15.04.15</td>
+<td>15.04.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='29205' href='#29205'></a>29205</td><td>Behavioral Ethics (Adv.)</td>
+<td>Irlenbusch</td>
+<td>16.07.15</td>
+<td>LS</td>
+<td>02.07.15</td>
+<td>02.07.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='29210' href='#29210'></a>29210</td><td>Business Project / Research Project zu Corporate Development and Business Ethics</td>
+<td>Danilov</td>
+<td>01.07.15</td>
+<td>12:00:00</td>
+<td>15.04.15</td>
+<td>15.04.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='29212' href='#29212'></a>29212</td><td>Behavioral Operations (Adv.)</td>
+<td>Becker-Peth</td>
+<td>17.07.15</td>
+<td>10:00:00</td>
+<td>03.07.15</td>
+<td>03.07.15</td>
+<td>wisoapp</td>
+<td>3</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='29214' href='#29214'></a>29214</td><td>Selected Issues in Corporate Development and Organizations</td>
+<td>Pracz</td>
+<td>05.06.15</td>
+<td>LS</td>
+<td>22.05.15</td>
+<td>22.05.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='29214' href='#29214'></a>29214</td><td>Selected Issues in Corporate Development and Organizations</td>
+<td>Janssen</td>
+<td>28.08.15</td>
+<td>09:00:00</td>
+<td>30.07.15</td>
+<td>14.08.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='30001' href='#30001'></a>30001</td><td>Strategic Management</td>
+<td>Delfmann</td>
+<td>17.04.15</td>
+<td>14:15:00</td>
+<td>03.04.15</td>
+<td>03.04.15</td>
+<td>wisoapp</td>
+<td>30</td>
+</tr>
+<tr ><td><a name='30002' href='#30002'></a>30002</td><td>Logistics Concepts, Systems and Models</td>
+<td>Delfmann</td>
+<td>10.04.15</td>
+<td>14:15:00</td>
+<td>26.03.15</td>
+<td>26.03.15</td>
+<td>wisoapp</td>
+<td>27</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='30003' href='#30003'></a>30003</td><td>Strategic Alliances and Networks</td>
+<td>Delfmann</td>
+<td>16.07.15</td>
+<td>12:15:00</td>
+<td>02.07.15</td>
+<td>02.07.15</td>
+<td>wisoapp</td>
+<td>10</td>
+</tr>
+<tr ><td><a name='31001' href='#31001'></a>31001</td><td>Insurance Economics</td>
+<td>Schradin</td>
+<td>11.05.15</td>
+<td>08:00:00</td>
+<td>27.04.15</td>
+<td>27.04.15</td>
+<td>wisoapp</td>
+<td>8</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='31003' href='#31003'></a>31003</td><td>Rechnungswesen von Versicherungsunternehmen</td>
+<td>Schradin</td>
+<td>14.07.15</td>
+<td>16:00:00</td>
+<td>30.06.15</td>
+<td>30.06.15</td>
+<td>wisoapp</td>
+<td>4</td>
+</tr>
+<tr ><td><a name='31003' href='#31003'></a>31003</td><td>Rechnungswesen von Versicherungsunternehmen</td>
+<td>Schradin</td>
+<td>14.09.15</td>
+<td>08:00:00</td>
+<td>31.08.15</td>
+<td>31.08.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='31005' href='#31005'></a>31005</td><td>Value Based Management of Insurance Companies</td>
+<td>Schradin</td>
+<td>04.05.15</td>
+<td>08:00:00</td>
+<td>20.04.15</td>
+<td>20.04.15</td>
+<td>wisoapp</td>
+<td>2</td>
+</tr>
+<tr ><td><a name='31009' href='#31009'></a>31009</td><td>Versicherungskonzern und Rückversicherung</td>
+<td>Schradin</td>
+<td>13.07.15</td>
+<td>14:00:00</td>
+<td>29.06.15</td>
+<td>29.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='31009' href='#31009'></a>31009</td><td>Versicherungskonzern und Rückversicherung</td>
+<td>Schradin</td>
+<td>15.09.15</td>
+<td>08:00:00</td>
+<td>01.09.15</td>
+<td>01.09.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr ><td><a name='32001' href='#32001'></a>32001</td><td>Unternehmensbewertung</td>
+<td>Kuhner</td>
+<td>12.05.15</td>
+<td>17:00:00</td>
+<td>28.04.15</td>
+<td>28.04.15</td>
+<td>wisoapp</td>
+<td>25</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='32002' href='#32002'></a>32002</td><td>Internationale Rechnungslegung</td>
+<td>Kuhner</td>
+<td>17.07.15</td>
+<td>12:00:00</td>
+<td>03.07.15</td>
+<td>03.07.15</td>
+<td>wisoapp</td>
+<td>3</td>
+</tr>
+<tr ><td><a name='32002' href='#32002'></a>32002</td><td>Internationale Rechnungslegung</td>
+<td>Kuhner</td>
+<td>29.09.15</td>
+<td>17:00:00</td>
+<td>15.09.15</td>
+<td>15.09.15</td>
+<td>wisoapp</td>
+<td>4</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='32003' href='#32003'></a>32003</td><td>Unternehmenspublizität und Bilanzanalyse sowie Konzernbilanzen</td>
+<td>Kuhner</td>
+<td>13.05.15</td>
+<td>17:00:00</td>
+<td>29.04.15</td>
+<td>29.04.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='32004' href='#32004'></a>32004</td><td>Methoden und Institutionen der Jahresabschlussprüfung sowie Sonderprüfungen</td>
+<td>Kuhner</td>
+<td>07.07.15</td>
+<td>16:00:00</td>
+<td>23.06.15</td>
+<td>23.06.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='32004' href='#32004'></a>32004</td><td>Methoden und Institutionen der Jahresabschlussprüfung sowie Sonderprüfungen</td>
+<td>Kuhner</td>
+<td>30.09.15</td>
+<td>17:00:00</td>
+<td>16.09.15</td>
+<td>16.09.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='32008' href='#32008'></a>32008</td><td>Unternehmenspublizität und Bilanzanalyse sowie Proseminar zur Rechnungslegung</td>
+<td>Kuhner</td>
+<td>13.05.15</td>
+<td>17:00:00</td>
+<td>29.04.15</td>
+<td>29.04.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='32101' href='#32101'></a>32101</td><td>Ausgewählte Fragen der Rechnungslegung und Wirtschaftsprüfung I - Unternehmenspublizität</td>
+<td>Kuhner</td>
+<td>13.05.15</td>
+<td>17:00:00</td>
+<td>29.04.15</td>
+<td>29.04.15</td>
+<td>wisoapp</td>
+<td>5</td>
+</tr>
+<tr ><td><a name='32102' href='#32102'></a>32102</td><td>Ausgewählte Fragen der Rechnungslegung und Wirtschaftsprüfung II - Prüfung</td>
+<td>Kuhner</td>
+<td>07.07.15</td>
+<td>16:00:00</td>
+<td>23.06.15</td>
+<td>23.06.15</td>
+<td>wisoapp</td>
+<td>2</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='32102' href='#32102'></a>32102</td><td>Ausgewählte Fragen der Rechnungslegung und Wirtschaftsprüfung II - Prüfung</td>
+<td>Kuhner</td>
+<td>30.09.15</td>
+<td>17:00:00</td>
+<td>16.09.15</td>
+<td>16.09.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr ><td><a name='34001' href='#34001'></a>34001</td><td>Lineare Modelle</td>
+<td>Andreß</td>
+<td>11.08.15</td>
+<td>14:00:00</td>
+<td>26.06.15</td>
+<td>26.06.15</td>
+<td>wisoapp</td>
+<td>2</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='34002' href='#34002'></a>34002</td><td>Kausalanalyse</td>
+<td>Andreß</td>
+<td>12.08.15</td>
+<td>14:00:00</td>
+<td>26.06.15</td>
+<td>26.06.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr ><td><a name='34002' href='#34002'></a>34002</td><td>Kausalanalyse</td>
+<td>Andreß</td>
+<td>23.09.15</td>
+<td>12:00:00</td>
+<td>26.06.15</td>
+<td>26.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='34004' href='#34004'></a>34004</td><td>Praxis der Umfrageforschung</td>
+<td>Andreß</td>
+<td>15.07.15</td>
+<td>14:00:00</td>
+<td>01.07.15</td>
+<td>01.07.15</td>
+<td>wisoapp</td>
+<td>4</td>
+</tr>
+<tr ><td><a name='34008' href='#34008'></a>34008</td><td>Forschungspraktikum</td>
+<td>Diverse</td>
+<td>18.05.15</td>
+<td>LS</td>
+<td>04.05.15</td>
+<td>04.05.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='35002' href='#35002'></a>35002</td><td>Energy Markets and Regulations</td>
+<td>Höffler</td>
+<td>23.09.15</td>
+<td>10:00:00</td>
+<td>09.09.15</td>
+<td>09.09.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr ><td><a name='35009' href='#35009'></a>35009</td><td>Umweltökonomik und Energiewirtschaft</td>
+<td>Lindenberger</td>
+<td>22.07.15</td>
+<td>11:30:00</td>
+<td>08.07.15</td>
+<td>08.07.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='35009' href='#35009'></a>35009</td><td>Umweltökonomik und Energiewirtschaft</td>
+<td>Lindenberger</td>
+<td>16.09.15</td>
+<td>11:30:00</td>
+<td>02.09.15</td>
+<td>02.09.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='35010' href='#35010'></a>35010</td><td>Ausgewählte Fragen der Energiewirtschaftslehre I</td>
+<td>Wolff</td>
+<td>24.04.15</td>
+<td>LS</td>
+<td>10.04.15</td>
+<td>10.04.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='35011' href='#35011'></a>35011</td><td>Ausgewählte Fragen der Energiewirtschaftslehre II</td>
+<td>Bettzüge</td>
+<td>10.04.15</td>
+<td>11:00:00</td>
+<td>26.03.15</td>
+<td>26.03.15</td>
+<td>Lehrstuhl</td>
+<td>1</td>
+</tr>
+<tr ><td><a name='35012' href='#35012'></a>35012</td><td>Energieökonomik II: Regulierung in der Energiewirtschaft</td>
+<td>Bettzüge</td>
+<td>22.07.15</td>
+<td>09:30:00</td>
+<td>08.07.15</td>
+<td>08.07.15</td>
+<td>wisoapp</td>
+<td>3</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='35012' href='#35012'></a>35012</td><td>Energieökonomik II: Regulierung in der Energiewirtschaft</td>
+<td>Bettzüge</td>
+<td>16.09.15</td>
+<td>09:30:00</td>
+<td>02.09.15</td>
+<td>02.09.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='35102' href='#35102'></a>35102</td><td>Aktuelle Fragen der Energiewirtschaftslehre</td>
+<td>Nies</td>
+<td>13.08.15</td>
+<td>09:00:00</td>
+<td>30.07.15</td>
+<td>30.07.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='35201' href='#35201'></a>35201</td><td>Seminar zur Energiewirtschaftslehre (Master)</td>
+<td>Bettzüge</td>
+<td>14.04.15</td>
+<td>LS</td>
+<td>31.03.15</td>
+<td>31.03.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='37001' href='#37001'></a>37001</td><td>Grundlagen des Genossenschaftswesens</td>
+<td>Blome-Drees</td>
+<td>18.07.15</td>
+<td>09:00:00</td>
+<td>04.07.15</td>
+<td>04.07.15</td>
+<td>wisoapp</td>
+<td>5</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='37001' href='#37001'></a>37001</td><td>Grundlagen des Genossenschaftswesens</td>
+<td>Blome-Drees</td>
+<td>26.09.15</td>
+<td>09:00:00</td>
+<td>12.09.15</td>
+<td>12.09.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='37002' href='#37002'></a>37002</td><td>Wirtschaftliche Kooperation in  Entwicklungsgesellschaften</td>
+<td>Schulz-Nieswandt</td>
+<td>18.07.15</td>
+<td>LS</td>
+<td>04.07.15</td>
+<td>04.07.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='37002' href='#37002'></a>37002</td><td>Wirtschaftliche Kooperation in  Entwicklungsgesellschaften</td>
+<td>Schulz-Nieswandt</td>
+<td>26.09.15</td>
+<td>LS</td>
+<td>12.09.15</td>
+<td>12.09.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='37003' href='#37003'></a>37003</td><td>Kooperative Selbsthilfe (Diplom)</td>
+<td>Schulz-Nieswandt</td>
+<td>18.07.15</td>
+<td>LS</td>
+<td>04.07.15</td>
+<td>04.07.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='37003' href='#37003'></a>37003</td><td>Kooperative Selbsthilfe (Diplom)</td>
+<td>Schulz-Nieswandt</td>
+<td>26.09.15</td>
+<td>LS</td>
+<td>12.09.15</td>
+<td>12.09.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='37005' href='#37005'></a>37005</td><td>Genossenschaftlicher Bankensektor und Finanzverbund</td>
+<td>Schmale</td>
+<td>19.05.15</td>
+<td>LS</td>
+<td>05.05.15</td>
+<td>05.05.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='37007' href='#37007'></a>37007</td><td>Ökonomik der Formen gegenseitiger Hilfe: Sozialversicherung und Genossenschaft</td>
+<td>Schulz-Nieswandt</td>
+<td>18.07.15</td>
+<td>LS</td>
+<td>04.07.15</td>
+<td>04.07.15</td>
+<td>wisoapp</td>
+<td>5</td>
+</tr>
+<tr ><td><a name='37101' href='#37101'></a>37101</td><td>Kooperative Selbsthilfe (Bachelor)</td>
+<td>Schulz-Nieswandt</td>
+<td>18.07.15</td>
+<td>12:00:00</td>
+<td>04.07.15</td>
+<td>04.07.15</td>
+<td>wisoapp</td>
+<td>16</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='37101' href='#37101'></a>37101</td><td>Kooperative Selbsthilfe (Bachelor)</td>
+<td>Schulz-Nieswandt</td>
+<td>26.09.15</td>
+<td>12:00:00</td>
+<td>12.09.15</td>
+<td>12.09.15</td>
+<td>wisoapp</td>
+<td>2</td>
+</tr>
+<tr ><td><a name='37201' href='#37201'></a>37201</td><td>Seminar in Selbsthilfeökonomik</td>
+<td>Schulz-Nieswandt</td>
+<td>21.04.15</td>
+<td>LS</td>
+<td>07.04.15</td>
+<td>07.04.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='38001' href='#38001'></a>38001</td><td>Volkswirtschaftliche Grundlagen der Gesundheitsökonomie</td>
+<td>Pimpertz</td>
+<td>16.07.15</td>
+<td>17:45:00</td>
+<td>02.07.15</td>
+<td>02.07.15</td>
+<td>wisoapp</td>
+<td>8</td>
+</tr>
+<tr ><td><a name='38001' href='#38001'></a>38001</td><td>Volkswirtschaftliche Grundlagen der Gesundheitsökonomie</td>
+<td>Pimpertz</td>
+<td>23.09.15</td>
+<td>17:45:00</td>
+<td>09.09.15</td>
+<td>09.09.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='40201' href='#40201'></a>40201</td><td>Kolloquium Internationale Beziehungen</td>
+<td>Jäger</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='40301' href='#40301'></a>40301</td><td>Forschungsprojekt Vergleichende Politik</td>
+<td>Trampusch</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='40302' href='#40302'></a>40302</td><td>Ausgewählte Fragestellungen der Politikwissenschaft</td>
+<td>Höpner</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='40303' href='#40303'></a>40303</td><td>Kolloquium Politikwissenschaft</td>
+<td>Kaiser</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='40303' href='#40303'></a>40303</td><td>Kolloquium Politikwissenschaft</td>
+<td>Jäger</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>2</td>
+</tr>
+<tr ><td><a name='40303' href='#40303'></a>40303</td><td>Kolloquium Politikwissenschaft</td>
+<td>Wessels</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='40303' href='#40303'></a>40303</td><td>Kolloquium Politikwissenschaft</td>
+<td>Kamp</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='40303' href='#40303'></a>40303</td><td>Kolloquium Politikwissenschaft</td>
+<td>Trampusch</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='40303' href='#40303'></a>40303</td><td>Kolloquium Politikwissenschaft</td>
+<td>Halbeisen</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='41001' href='#41001'></a>41001</td><td>Anthropologische Fundierung der Sozialpolitik</td>
+<td>Schulz-Nieswandt</td>
+<td>23.07.15</td>
+<td>12:15:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>9</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='41003' href='#41003'></a>41003</td><td>European Social Policy</td>
+<td>Schulz-Nieswandt</td>
+<td>18.07.15</td>
+<td>LS</td>
+<td>04.07.15</td>
+<td>04.07.15</td>
+<td>wisoapp</td>
+<td>4</td>
+</tr>
+<tr ><td><a name='41004' href='#41004'></a>41004</td><td>Struktur des Gesundheitswesens</td>
+<td>Maier-Rigaud</td>
+<td>18.07.15</td>
+<td>10:30:00</td>
+<td>04.07.15</td>
+<td>04.07.15</td>
+<td>wisoapp</td>
+<td>4</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='41004' href='#41004'></a>41004</td><td>Struktur des Gesundheitswesens</td>
+<td>Maier-Rigaud</td>
+<td>26.09.15</td>
+<td>10:30:00</td>
+<td>12.09.15</td>
+<td>12.09.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='41005' href='#41005'></a>41005</td><td>International Comparison of Health Care Systems</td>
+<td>Maier-Rigaud</td>
+<td>18.07.15</td>
+<td>09:00:00</td>
+<td>04.07.15</td>
+<td>04.07.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='41005' href='#41005'></a>41005</td><td>International Comparison of Health Care Systems</td>
+<td>Maier-Rigaud</td>
+<td>26.09.15</td>
+<td>09:00:00</td>
+<td>12.09.15</td>
+<td>12.09.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='41101' href='#41101'></a>41101</td><td>Altern und Sozialraum im Welfaremix</td>
+<td>Schulz-Nieswandt</td>
+<td>23.07.15</td>
+<td>08:45:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>35</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='41101' href='#41101'></a>41101</td><td>Altern und Sozialraum im Welfaremix</td>
+<td>Schulz-Nieswandt</td>
+<td>24.09.15</td>
+<td>10:30:00</td>
+<td>27.08.15</td>
+<td>03.09.15</td>
+<td>wisoapp</td>
+<td>4</td>
+</tr>
+<tr ><td><a name='41201' href='#41201'></a>41201</td><td>Seminar in Sozialpolitik</td>
+<td>Schulz-Nieswandt</td>
+<td>21.04.15</td>
+<td>LS</td>
+<td>07.04.15</td>
+<td>07.04.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='42201' href='#42201'></a>42201</td><td>Mediensoziologie I: Mediensysteme und Medienangebote</td>
+<td>Jacob</td>
+<td>18.05.15</td>
+<td>LS</td>
+<td>04.05.15</td>
+<td>04.05.15</td>
+<td>wisoapp</td>
+<td>2</td>
+</tr>
+<tr ><td><a name='42202' href='#42202'></a>42202</td><td>Mediensoziologie II: Mediennutzung und Medienwirkung</td>
+<td>Jacob</td>
+<td>18.05.15</td>
+<td>LS</td>
+<td>04.05.15</td>
+<td>04.05.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='42203' href='#42203'></a>42203</td><td>Mediensoziologie III: Massenkommunikation im sozialen Wandel und im internationalen Vergleich</td>
+<td>Jacob</td>
+<td>18.05.15</td>
+<td>LS</td>
+<td>04.05.15</td>
+<td>04.05.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='42301' href='#42301'></a>42301</td><td>Thesis</td>
+<td>Diverse</td>
+<td>18.05.15</td>
+<td>LS</td>
+<td>04.05.15</td>
+<td>04.05.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='44002' href='#44002'></a>44002</td><td>Statistik für Fortgeschrittene - Statistisches Schließen (Adv.)</td>
+<td>Dyckerhoff</td>
+<td>16.07.15</td>
+<td>16:00:00</td>
+<td>02.07.15</td>
+<td>02.07.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr ><td><a name='44002' href='#44002'></a>44002</td><td>Statistik für Fortgeschrittene - Statistisches Schließen (Adv.)</td>
+<td>Dyckerhoff</td>
+<td>23.09.15</td>
+<td>14:00:00</td>
+<td>09.09.15</td>
+<td>09.09.15</td>
+<td>wisoapp</td>
+<td>2</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='44003' href='#44003'></a>44003</td><td>Statistical Analysis of Financial Market Data (Adv.)</td>
+<td>Breitung</td>
+<td>14.07.15</td>
+<td>12:00:00</td>
+<td>30.06.15</td>
+<td>30.06.15</td>
+<td>wisoapp</td>
+<td>2</td>
+</tr>
+<tr ><td><a name='44003' href='#44003'></a>44003</td><td>Statistical Analysis of Financial Market Data (Adv.)</td>
+<td>Breitung</td>
+<td>06.08.15</td>
+<td>12:00:00</td>
+<td>23.07.15</td>
+<td>23.07.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='44010' href='#44010'></a>44010</td><td>Adv. Econometrics: Microeconometrics</td>
+<td>Badunenko</td>
+<td>22.07.15</td>
+<td>16:00:00</td>
+<td>08.07.15</td>
+<td>08.07.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='44010' href='#44010'></a>44010</td><td>Adv. Econometrics: Microeconometrics</td>
+<td>Badunenko</td>
+<td>19.08.15</td>
+<td>16:00:00</td>
+<td>05.08.15</td>
+<td>05.08.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='44101' href='#44101'></a>44101</td><td>Analyse multivariater Daten</td>
+<td>Gribisch</td>
+<td>17.07.15</td>
+<td>12:00:00</td>
+<td>03.07.15</td>
+<td>03.07.15</td>
+<td>wisoapp</td>
+<td>3</td>
+</tr>
+<tr ><td><a name='44101' href='#44101'></a>44101</td><td>Analyse multivariater Daten</td>
+<td>Gribisch</td>
+<td>23.09.15</td>
+<td>10:00:00</td>
+<td>09.09.15</td>
+<td>09.09.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='44103' href='#44103'></a>44103</td><td>Ausgewählte quantitative Methoden</td>
+<td>Manner</td>
+<td>24.07.15</td>
+<td>LS</td>
+<td>10.07.15</td>
+<td>10.07.15</td>
+<td>wisoapp</td>
+<td>4</td>
+</tr>
+<tr ><td><a name='44104' href='#44104'></a>44104</td><td>Angewandte Ökonometrie</td>
+<td>Jaeger</td>
+<td>28.08.15</td>
+<td>09:00:00</td>
+<td>30.07.15</td>
+<td>30.07.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='44201' href='#44201'></a>44201</td><td>Mathematik für Wirtschaftswissenschaftler</td>
+<td>Dyckerhoff</td>
+<td>23.05.15</td>
+<td>10:30:00</td>
+<td>04.05.15</td>
+<td>11.05.15</td>
+<td>wisoapp</td>
+<td>41</td>
+</tr>
+<tr ><td><a name='44205' href='#44205'></a>44205</td><td>Management Skills</td>
+<td>Siegel</td>
+<td>05.06.15</td>
+<td>LS</td>
+<td>22.05.15</td>
+<td>22.05.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='44205' href='#44205'></a>44205</td><td>Management Skills</td>
+<td>Siegel</td>
+<td>05.06.15</td>
+<td>LS</td>
+<td>22.05.15</td>
+<td>22.05.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='44205' href='#44205'></a>44205</td><td>Management Skills</td>
+<td>Meyenschein</td>
+<td>05.06.15</td>
+<td>LS</td>
+<td>22.05.15</td>
+<td>22.05.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='44205' href='#44205'></a>44205</td><td>Management Skills</td>
+<td>Höhn</td>
+<td>05.06.15</td>
+<td>LS</td>
+<td>22.05.15</td>
+<td>22.05.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='44205' href='#44205'></a>44205</td><td>Management Skills</td>
+<td>Siegel</td>
+<td>05.06.15</td>
+<td>LS</td>
+<td>22.05.15</td>
+<td>22.05.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='44205' href='#44205'></a>44205</td><td>Management Skills</td>
+<td>Höhn</td>
+<td>05.06.15</td>
+<td>LS</td>
+<td>22.05.15</td>
+<td>22.05.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='44205' href='#44205'></a>44205</td><td>Management Skills</td>
+<td>Meyenschein</td>
+<td>04.08.15</td>
+<td>LS</td>
+<td>21.07.15</td>
+<td>21.07.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='44304' href='#44304'></a>44304</td><td>Selected Topics: Econometrics</td>
+<td>Breitung</td>
+<td>15.07.15</td>
+<td>10:00:00</td>
+<td>01.07.15</td>
+<td>01.07.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='44304' href='#44304'></a>44304</td><td>Selected Topics: Econometrics</td>
+<td>Breitung</td>
+<td>06.08.15</td>
+<td>10:00:00</td>
+<td>23.07.15</td>
+<td>23.07.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='48401' href='#48401'></a>48401</td><td>Requirements Engineering</td>
+<td>Basten</td>
+<td>13.04.15</td>
+<td>10:00:00</td>
+<td>30.03.15</td>
+<td>30.03.15</td>
+<td>wisoapp</td>
+<td>2</td>
+</tr>
+<tr ><td><a name='48402' href='#48402'></a>48402</td><td>Selected Issues in Information Systems I (<i>Basten / Schmidt</i>)</td>
+<td>Diverse</td>
+<td>17.04.15</td>
+<td>09:00:00</td>
+<td>17.04.15</td>
+<td>17.04.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='48403' href='#48403'></a>48403</td><td>Selected Issues in Information Systems II (<i>Prüfer: Basten, Schmidt, Nikolaus</i>)</td>
+<td>Diverse</td>
+<td>17.04.15</td>
+<td>LS</td>
+<td>17.04.15</td>
+<td>17.04.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='49101' href='#49101'></a>49101</td><td>Berufspädagogik</td>
+<td>Göckede</td>
+<td>16.07.15</td>
+<td>14:00:00</td>
+<td>02.07.15</td>
+<td>02.07.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='49102' href='#49102'></a>49102</td><td>Lehren und Lernen im Betrieb</td>
+<td>Göckede</td>
+<td>14.07.15</td>
+<td>08:00:00</td>
+<td>30.06.15</td>
+<td>30.06.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='49103' href='#49103'></a>49103</td><td>Berufliche Bildung</td>
+<td>Göckede</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>18.05.15</td>
+<td>05.06.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='49201' href='#49201'></a>49201</td><td>Systeme beruflicher Bildung</td>
+<td>Pilz</td>
+<td>06.05.15</td>
+<td>18:00:00</td>
+<td>22.04.15</td>
+<td>22.04.15</td>
+<td>wisoapp</td>
+<td>3</td>
+</tr>
+<tr ><td><a name='49204' href='#49204'></a>49204</td><td>Instructional Design for Training</td>
+<td>Pilz</td>
+<td>17.06.15</td>
+<td>18:00:00</td>
+<td>03.06.15</td>
+<td>03.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='49206' href='#49206'></a>49206</td><td>Kommunikation und Beratung</td>
+<td>Buschfeld</td>
+<td>17.07.15</td>
+<td>10:00:00</td>
+<td>03.07.15</td>
+<td>03.07.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='49302' href='#49302'></a>49302</td><td>Fachdidaktik Wirtschaftswissenschaften</td>
+<td>Pilz</td>
+<td>09.04.15</td>
+<td>16:00:00</td>
+<td>25.03.15</td>
+<td>25.03.15</td>
+<td>wisoapp</td>
+<td>3</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='49303' href='#49303'></a>49303</td><td>Didaktik beruflicher Bildungsgänge</td>
+<td>Buschfeld</td>
+<td>06.07.15</td>
+<td>LS</td>
+<td>18.05.15</td>
+<td>22.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='49307' href='#49307'></a>49307</td><td>Projekte zu Forschungsfeldern der Wirtschaftspädagogik II</td>
+<td>Göckede</td>
+<td>06.07.15</td>
+<td>LS</td>
+<td>22.05.15</td>
+<td>22.06.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='49309' href='#49309'></a>49309</td><td>Fachdidaktische Studien und Praktika I</td>
+<td>Göckede</td>
+<td>30.04.15</td>
+<td>LS</td>
+<td>16.04.15</td>
+<td>16.04.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='49309' href='#49309'></a>49309</td><td>Fachdidaktische Studien und Praktika I</td>
+<td>Göckede</td>
+<td>30.07.15</td>
+<td>LS</td>
+<td>16.07.15</td>
+<td>16.07.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='49310' href='#49310'></a>49310</td><td>Fachdidaktische Studien und Praktika II</td>
+<td>Göckede</td>
+<td>30.04.15</td>
+<td>LS</td>
+<td>16.04.15</td>
+<td>16.04.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='49310' href='#49310'></a>49310</td><td>Fachdidaktische Studien und Praktika II</td>
+<td>Göckede</td>
+<td>30.07.15</td>
+<td>LS</td>
+<td>16.07.15</td>
+<td>16.07.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='49312' href='#49312'></a>49312</td><td>Wirtschaftspädagogisches Kolloquium</td>
+<td>Dilger</td>
+<td>01.06.15</td>
+<td>LS</td>
+<td>18.05.15</td>
+<td>18.05.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='49316' href='#49316'></a>49316</td><td>Instructional Design for Teaching</td>
+<td>Pilz</td>
+<td>17.06.15</td>
+<td>18:00:00</td>
+<td>03.06.15</td>
+<td>03.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='49317' href='#49317'></a>49317</td><td>Fachdidaktik Sozialwissenschaften</td>
+<td>Göckede</td>
+<td>30.07.15</td>
+<td>LS</td>
+<td>18.05.15</td>
+<td>16.07.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='49319' href='#49319'></a>49319</td><td>Projekte zu Forschungsfeldern der Wirtschaftspädagogik I</td>
+<td>Göckede</td>
+<td>06.07.15</td>
+<td>LS</td>
+<td>22.05.15</td>
+<td>22.06.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='49320' href='#49320'></a>49320</td><td>Betriebspädagogische Studien und Praktika</td>
+<td>Göckede</td>
+<td>06.07.15</td>
+<td>LS</td>
+<td>18.05.15</td>
+<td>22.06.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='50002' href='#50002'></a>50002</td><td>Aktuelle Forschungsfragen und Methoden empirischer Regionalforschung</td>
+<td>Reum</td>
+<td>20.07.15</td>
+<td>10:00:00</td>
+<td>06.07.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='50002' href='#50002'></a>50002</td><td>Aktuelle Forschungsfragen und Methoden empirischer Regionalforschung</td>
+<td>Reum</td>
+<td>28.09.15</td>
+<td>10:00:00</td>
+<td>14.09.15</td>
+<td>14.09.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='50005' href='#50005'></a>50005</td><td>Weltwirtschaft und Regionalentwicklung</td>
+<td>Fuchs</td>
+<td>24.04.15</td>
+<td>LS</td>
+<td>24.04.15</td>
+<td>24.04.15</td>
+<td>wisoapp</td>
+<td>3</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='50007' href='#50007'></a>50007</td><td>The Economic Geography of the European Union</td>
+<td>Fuchs</td>
+<td>24.04.15</td>
+<td>LS</td>
+<td>24.04.15</td>
+<td>24.04.15</td>
+<td>wisoapp</td>
+<td>2</td>
+</tr>
+<tr ><td><a name='50012' href='#50012'></a>50012</td><td>Regionalökonomie</td>
+<td>Reum</td>
+<td>27.04.15</td>
+<td>LS</td>
+<td>27.04.15</td>
+<td>27.04.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='50101' href='#50101'></a>50101</td><td>Grundzüge der Wirtschaftsgeographie</td>
+<td>Fuchs</td>
+<td>26.05.15</td>
+<td>LS</td>
+<td>17.04.15</td>
+<td>17.04.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='50102' href='#50102'></a>50102</td><td>Seminar zur Wirtschaftsgeographie</td>
+<td>Fuchs</td>
+<td>23.04.15</td>
+<td>LS</td>
+<td>23.04.15</td>
+<td>23.04.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='50102' href='#50102'></a>50102</td><td>Seminar zur Wirtschaftsgeographie</td>
+<td>Fuchs</td>
+<td>24.04.15</td>
+<td>LS</td>
+<td>24.04.15</td>
+<td>24.04.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='50102' href='#50102'></a>50102</td><td>Seminar zur Wirtschaftsgeographie</td>
+<td>Bußler</td>
+<td>24.04.15</td>
+<td>LS</td>
+<td>24.04.15</td>
+<td>24.04.15</td>
+<td>wisoapp</td>
+<td>2</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='52001' href='#52001'></a>52001</td><td>Einführung in die Psychologie</td>
+<td>Fetchenhauer</td>
+<td>23.05.15</td>
+<td>15:45:00</td>
+<td>04.05.15</td>
+<td>11.05.15</td>
+<td>wisoapp</td>
+<td>124</td>
+</tr>
+<tr ><td><a name='52002' href='#52002'></a>52002</td><td>Consumer Behavior</td>
+<td>Kokkoris</td>
+<td>18.05.15</td>
+<td>18:00:00</td>
+<td>07.04.15</td>
+<td>07.04.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='52004' href='#52004'></a>52004</td><td>Psychology of Marketing and Advertising</td>
+<td>Kokkoris</td>
+<td>23.07.15</td>
+<td>14:00:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>14</td>
+</tr>
+<tr ><td><a name='52004' href='#52004'></a>52004</td><td>Psychology of Marketing and Advertising</td>
+<td>Kokkoris</td>
+<td>30.09.15</td>
+<td>08:45:00</td>
+<td>27.08.15</td>
+<td>03.09.15</td>
+<td>wisoapp</td>
+<td>4</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='52005' href='#52005'></a>52005</td><td>Psychologie des Entscheidens</td>
+<td>Schlösser</td>
+<td>30.05.15</td>
+<td>15:45:00</td>
+<td>11.05.15</td>
+<td>18.05.15</td>
+<td>wisoapp</td>
+<td>45</td>
+</tr>
+<tr ><td><a name='52008' href='#52008'></a>52008</td><td>Organizational Psychology</td>
+<td>Hölzl</td>
+<td>06.08.15</td>
+<td>11:00:00</td>
+<td>23.07.15</td>
+<td>23.07.15</td>
+<td>wisoapp</td>
+<td>5</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='52008' href='#52008'></a>52008</td><td>Organizational Psychology</td>
+<td>Hölzl</td>
+<td>17.09.15</td>
+<td>09:00:00</td>
+<td>03.09.15</td>
+<td>03.09.15</td>
+<td>wisoapp</td>
+<td>2</td>
+</tr>
+<tr ><td><a name='52009' href='#52009'></a>52009</td><td>Evolutionäre Erklärung menschlichen Verhaltens</td>
+<td>Ehlebracht</td>
+<td>24.07.15</td>
+<td>15:30:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>12</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='52009' href='#52009'></a>52009</td><td>Evolutionäre Erklärung menschlichen Verhaltens</td>
+<td>Ehlebracht</td>
+<td>17.09.15</td>
+<td>12:15:00</td>
+<td>27.08.15</td>
+<td>03.09.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='52010' href='#52010'></a>52010</td><td>Lehr- Forschungsprojekt</td>
+<td>Fetchenhauer</td>
+<td>01.05.15</td>
+<td>09:00:00</td>
+<td>17.04.15</td>
+<td>17.04.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='52017' href='#52017'></a>52017</td><td>Economic Psychology</td>
+<td>Hölzl</td>
+<td>06.08.15</td>
+<td>09:00:00</td>
+<td>23.07.15</td>
+<td>23.07.15</td>
+<td>wisoapp</td>
+<td>18</td>
+</tr>
+<tr ><td><a name='52017' href='#52017'></a>52017</td><td>Economic Psychology</td>
+<td>Hölzl</td>
+<td>17.09.15</td>
+<td>11:00:00</td>
+<td>03.09.15</td>
+<td>03.09.15</td>
+<td>wisoapp</td>
+<td>2</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='52018' href='#52018'></a>52018</td><td>Psychology of Money Management</td>
+<td>Hölzl</td>
+<td>11.05.15</td>
+<td>18:00:00</td>
+<td>07.04.15</td>
+<td>07.04.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='53001' href='#53001'></a>53001</td><td>Hauptseminar Bankbetriebslehre</td>
+<td>Hartmann-Wendels</td>
+<td>26.05.15</td>
+<td>12:00:00</td>
+<td>06.03.15</td>
+<td>13.03.15</td>
+<td>Lehrstuhl</td>
+<td>2</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='53002' href='#53002'></a>53002</td><td>Hauptseminar Marketing und Markenmanagement</td>
+<td>Völckner</td>
+<td>08.04.15</td>
+<td>08:00:00</td>
+<td>24.03.15</td>
+<td>24.03.15</td>
+<td>Lehrstuhl</td>
+<td>9</td>
+</tr>
+<tr ><td><a name='53002' href='#53002'></a>53002</td><td>Hauptseminar Marketing und Markenmanagement</td>
+<td>Völckner</td>
+<td>08.04.15</td>
+<td>08:00:00</td>
+<td>24.03.15</td>
+<td>24.03.15</td>
+<td>Lehrstuhl</td>
+<td>8</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='53004' href='#53004'></a>53004</td><td>Hauptseminar Betriebswirtschaftliche Steuerlehre</td>
+<td>Overesch</td>
+<td>26.05.15</td>
+<td>12:00:00</td>
+<td>06.04.15</td>
+<td>13.04.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='53005' href='#53005'></a>53005</td><td>Hauptseminar Controlling</td>
+<td>Homburg</td>
+<td>05.05.15</td>
+<td>16:00:00</td>
+<td>05.03.15</td>
+<td>05.03.15</td>
+<td>Lehrstuhl</td>
+<td>6</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='53007' href='#53007'></a>53007</td><td>Hauptseminar Handel und Kundenmanagement I</td>
+<td>Reinartz</td>
+<td>26.06.15</td>
+<td>10:00:00</td>
+<td>14.04.15</td>
+<td>14.04.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='53012' href='#53012'></a>53012</td><td>Hauptseminar Politikwissenschaft</td>
+<td>Wessels</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='53012' href='#53012'></a>53012</td><td>Hauptseminar Politikwissenschaft</td>
+<td>Leidhold</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='53012' href='#53012'></a>53012</td><td>Hauptseminar Politikwissenschaft</td>
+<td>Jäger</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='53012' href='#53012'></a>53012</td><td>Hauptseminar Politikwissenschaft</td>
+<td>Trampusch</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='53012' href='#53012'></a>53012</td><td>Hauptseminar Politikwissenschaft</td>
+<td>Kaiser</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='53013' href='#53013'></a>53013</td><td>Hauptseminar Spezielle Fachdidaktik Wirtschaftswissenschaften</td>
+<td>Göckede</td>
+<td>06.07.15</td>
+<td>LS</td>
+<td>18.05.15</td>
+<td>22.06.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='53018' href='#53018'></a>53018</td><td>Hauptseminar Supply Chain Management und Management Science</td>
+<td>Thonemann</td>
+<td>04.05.15</td>
+<td>14:00:00</td>
+<td>20.04.15</td>
+<td>20.04.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='53018' href='#53018'></a>53018</td><td>Hauptseminar Supply Chain Management und Management Science</td>
+<td>Thonemann</td>
+<td>06.07.15</td>
+<td>14:00:00</td>
+<td>22.06.15</td>
+<td>22.06.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='53020' href='#53020'></a>53020</td><td>Hauptseminar Unternehmensentwicklung und Organisation</td>
+<td>Ebers</td>
+<td>30.04.15</td>
+<td>LS</td>
+<td>16.04.15</td>
+<td>16.04.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='53022' href='#53022'></a>53022</td><td>Hauptseminar Versicherungsbetriebslehre</td>
+<td>Schradin</td>
+<td>24.04.15</td>
+<td>LS</td>
+<td>10.04.15</td>
+<td>10.04.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='53025' href='#53025'></a>53025</td><td>Hauptseminar Energiewirtschaftslehre</td>
+<td>Bettzüge</td>
+<td>14.04.15</td>
+<td>LS</td>
+<td>31.03.15</td>
+<td>31.03.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='53027' href='#53027'></a>53027</td><td>Hauptseminar Gesundheitswesen: Politik und Management</td>
+<td>Schulz-Nieswandt</td>
+<td>21.04.15</td>
+<td>LS</td>
+<td>07.04.15</td>
+<td>07.04.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='53028' href='#53028'></a>53028</td><td>Hauptseminar Sozialpolitik</td>
+<td>Schulz-Nieswandt</td>
+<td>21.04.15</td>
+<td>LS</td>
+<td>07.04.15</td>
+<td>07.04.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='53032' href='#53032'></a>53032</td><td>Hauptseminar Versicherungswissenschaft</td>
+<td>Schulz-Nieswandt</td>
+<td>21.04.15</td>
+<td>LS</td>
+<td>07.04.15</td>
+<td>07.04.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='53033' href='#53033'></a>53033</td><td>Hauptseminar Wirtschaftspädagogik</td>
+<td>Göckede</td>
+<td>06.07.15</td>
+<td>LS</td>
+<td>18.05.15</td>
+<td>22.06.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='53035' href='#53035'></a>53035</td><td>Hauptseminar Wirtschafts- und Sozialgeographie</td>
+<td>Fuchs</td>
+<td>24.04.15</td>
+<td>LS</td>
+<td>24.04.15</td>
+<td>24.04.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='53037' href='#53037'></a>53037</td><td>Hauptseminar Wirtschafts- und Sozialpsychologie</td>
+<td>Fetchenhauer</td>
+<td>01.07.15</td>
+<td>09:00:00</td>
+<td>07.04.15</td>
+<td>07.04.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='53038' href='#53038'></a>53038</td><td>Hauptseminar Informatik</td>
+<td>Speckenmeyer</td>
+<td>08.04.15</td>
+<td>LS</td>
+<td>01.04.15</td>
+<td>01.04.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='53039' href='#53039'></a>53039</td><td>Hauptseminar Entwicklung von Informationssystemen (<i>Prüfer: Mellis, Rosenkanz, Sunyaev, Nokolaus Schmidt</i>)</td>
+<td>Diverse</td>
+<td>06.07.15</td>
+<td>10:00:00</td>
+<td>07.04.15</td>
+<td>07.04.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='53040' href='#53040'></a>53040</td><td>Hauptseminar Information Management</td>
+<td>Schoder</td>
+<td>14.04.15</td>
+<td>LS</td>
+<td>31.03.15</td>
+<td>31.03.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='53042' href='#53042'></a>53042</td><td>Hauptseminar Genossenschaftswesen</td>
+<td>Schulz-Nieswandt</td>
+<td>21.04.15</td>
+<td>LS</td>
+<td>07.04.15</td>
+<td>07.04.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='53044' href='#53044'></a>53044</td><td>Advanced Seminar II (Theory): Management in Health Care Systems</td>
+<td>Kuntz</td>
+<td>17.04.15</td>
+<td>LS</td>
+<td>17.04.15</td>
+<td>17.04.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='53046' href='#53046'></a>53046</td><td>Hauptseminar Gesundheitsökonomik und Ökonomik der Sozialen Sicherung</td>
+<td>Schulz-Nieswandt</td>
+<td>21.04.15</td>
+<td>LS</td>
+<td>07.04.15</td>
+<td>07.04.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='53048' href='#53048'></a>53048</td><td>Hauptseminar Internationale Politik</td>
+<td>Klein</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='53049' href='#53049'></a>53049</td><td>Hauptseminar Außenpolitik</td>
+<td>Ruhnke</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='53052' href='#53052'></a>53052</td><td>Hauptseminar Spezielle Wirtschaftsinformatik</td>
+<td>Schoder</td>
+<td>14.04.15</td>
+<td>LS</td>
+<td>31.03.15</td>
+<td>31.03.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='53053' href='#53053'></a>53053</td><td>Hauptseminar Das politische System der EU: strategische und konzeptionelle Ansätze</td>
+<td>Wessels</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>2</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='53053' href='#53053'></a>53053</td><td>Hauptseminar Das politische System der EU: strategische und konzeptionelle Ansätze</td>
+<td>Grossmann</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='53054' href='#53054'></a>53054</td><td>Hauptseminar Vergleichende Politikwissenschaft</td>
+<td>Sauermann</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='53054' href='#53054'></a>53054</td><td>Hauptseminar Vergleichende Politikwissenschaft (<i>Hausarbeit / Referat zu 1396 The Rise (and Fall) of New Parties and the Stability of Party Systems</i>)</td>
+<td>Kaiser</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='53054' href='#53054'></a>53054</td><td>Hauptseminar Vergleichende Politikwissenschaft</td>
+<td>Spies</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='53054' href='#53054'></a>53054</td><td>Hauptseminar Vergleichende Politikwissenschaft (<i>Klausur zu 1392 Förderalismus und Mehrebenenpolitik</i>)</td>
+<td>Kaiser</td>
+<td>14.07.15</td>
+<td>14:15:00</td>
+<td>23.06.15</td>
+<td>30.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='53055' href='#53055'></a>53055</td><td>Hauptseminar Politische Theorie</td>
+<td>Leidhold</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='53056' href='#53056'></a>53056</td><td>Hauptseminar Politische und religiöse Ideen</td>
+<td>Halbeisen</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='53056' href='#53056'></a>53056</td><td>Hauptseminar Politische und religiöse Ideen</td>
+<td>Kamp</td>
+<td>19.06.15</td>
+<td>LS</td>
+<td>05.06.15</td>
+<td>05.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='53058' href='#53058'></a>53058</td><td>Wirtschafts- und sozialpsychologisches Hauptseminar I</td>
+<td>Fetchenhauer</td>
+<td>01.07.15</td>
+<td>09:00:00</td>
+<td>07.04.15</td>
+<td>07.04.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='53060' href='#53060'></a>53060</td><td>Hauptseminar Handel und Kundenmanagement II</td>
+<td>Elsner</td>
+<td>03.06.15</td>
+<td>10:00:00</td>
+<td>04.03.15</td>
+<td>04.03.15</td>
+<td>Lehrstuhl</td>
+<td>8</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='53061' href='#53061'></a>53061</td><td>Hauptseminar Human Resource Management</td>
+<td>Heinz</td>
+<td>13.04.15</td>
+<td>LS</td>
+<td>13.04.15</td>
+<td>13.04.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='53062' href='#53062'></a>53062</td><td>Analyse von Reformvorhaben im Gesundheitssystem</td>
+<td>Müller</td>
+<td>23.06.15</td>
+<td>LS</td>
+<td>09.06.15</td>
+<td>09.06.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='53063' href='#53063'></a>53063</td><td>Hauptseminar Kapitalmärkte und Unternehmensfinanzen</td>
+<td>Hess</td>
+<td>22.06.15</td>
+<td>LS</td>
+<td>08.06.15</td>
+<td>08.06.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='53064' href='#53064'></a>53064</td><td>Hauptseminar Finanzinstitutionen</td>
+<td>Schradin</td>
+<td>24.04.15</td>
+<td>LS</td>
+<td>10.04.15</td>
+<td>10.04.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='53064' href='#53064'></a>53064</td><td>Hauptseminar Finanzinstitutionen</td>
+<td>Hartmann-Wendels</td>
+<td>26.05.15</td>
+<td>12:00:00</td>
+<td>06.03.15</td>
+<td>13.03.15</td>
+<td>Lehrstuhl</td>
+<td>11</td>
+</tr>
+<tr ><td><a name='54101' href='#54101'></a>54101</td><td>International Management I</td>
+<td>Guillotin</td>
+<td>27.08.15</td>
+<td>09:00:00</td>
+<td>15.07.15</td>
+<td>31.07.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='54102' href='#54102'></a>54102</td><td>International Management II</td>
+<td>Corfman</td>
+<td>11.09.15</td>
+<td>09:00:00</td>
+<td>15.07.15</td>
+<td>31.07.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='54201' href='#54201'></a>54201</td><td>Special Aspects of Economics I (Bachelor)</td>
+<td>Guillotin</td>
+<td>27.08.15</td>
+<td>09:00:00</td>
+<td>15.07.15</td>
+<td>31.07.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='54202' href='#54202'></a>54202</td><td>Special Aspects of Economics II (Bachelor)</td>
+<td>Corfman</td>
+<td>11.09.15</td>
+<td>09:00:00</td>
+<td>15.07.15</td>
+<td>31.07.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='54301' href='#54301'></a>54301</td><td>Special Aspects of Sociology I (Bachelor)</td>
+<td>Guillotin</td>
+<td>27.08.15</td>
+<td>09:00:00</td>
+<td>15.07.15</td>
+<td>31.07.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='54302' href='#54302'></a>54302</td><td>Special Aspects of Sociology II (Bachelor)</td>
+<td>Corfman</td>
+<td>11.09.15</td>
+<td>09:00:00</td>
+<td>15.07.15</td>
+<td>31.07.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='54401' href='#54401'></a>54401</td><td>Special Aspects of Political Science I (Bachelor)</td>
+<td>Guillotin</td>
+<td>27.08.15</td>
+<td>09:00:00</td>
+<td>15.07.15</td>
+<td>31.07.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='54402' href='#54402'></a>54402</td><td>Special Aspects of Political Science II (Bachelor)</td>
+<td>Corfman</td>
+<td>11.09.15</td>
+<td>09:00:00</td>
+<td>15.07.15</td>
+<td>31.07.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='54701' href='#54701'></a>54701</td><td>Deutsches Wirtschafts- und Sozialsystem I</td>
+<td>Schulz-Nieswandt</td>
+<td>24.06.15</td>
+<td>12:00:00</td>
+<td>10.06.15</td>
+<td>10.06.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='54702' href='#54702'></a>54702</td><td>Deutsches Wirtschafts- und Sozialsystem II</td>
+<td>Schulz-Nieswandt</td>
+<td>30.09.15</td>
+<td>LS</td>
+<td>09.07.15</td>
+<td>15.07.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='71001' href='#71001'></a>71001</td><td>Database Systems (<i>E-Prüfung</i>)</td>
+<td>Rosenkranz</td>
+<td>17.04.15</td>
+<td>09:00:00</td>
+<td>27.03.15</td>
+<td>03.04.15</td>
+<td>wisoapp</td>
+<td>59</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='71002' href='#71002'></a>71002</td><td>Systems Analysis and Architecture</td>
+<td>Sunyaev</td>
+<td>08.06.15</td>
+<td>12:00:00</td>
+<td>22.05.15</td>
+<td>22.05.15</td>
+<td>wisoapp</td>
+<td>17</td>
+</tr>
+<tr ><td><a name='71003' href='#71003'></a>71003</td><td>Information Systems Management</td>
+<td>Schoder</td>
+<td>16.05.15</td>
+<td>10:00:00</td>
+<td>02.05.15</td>
+<td>02.05.15</td>
+<td>wisoapp</td>
+<td>29</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='71102' href='#71102'></a>71102</td><td>Decision Support Systems</td>
+<td>Beroggi</td>
+<td>19.05.15</td>
+<td>LS</td>
+<td>05.05.15</td>
+<td>05.05.15</td>
+<td>wisoapp</td>
+<td>41</td>
+</tr>
+<tr ><td><a name='71105' href='#71105'></a>71105</td><td>Ausgewählte Fragen der Wirtschaftsinformatik</td>
+<td>Mendling</td>
+<td>28.08.15</td>
+<td>09:00:00</td>
+<td>30.07.15</td>
+<td>14.08.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='71201' href='#71201'></a>71201</td><td>Wirtschaftsinformatik in der Praxis: Wissenschaftlich begleitetes externes Praktikum</td>
+<td>Schmidt</td>
+<td>05.06.15</td>
+<td>09:00:00</td>
+<td>17.04.15</td>
+<td>17.04.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr ><td><a name='73002' href='#73002'></a>73002</td><td>Informatik I</td>
+<td>Speckenmeyer</td>
+<td>24.07.15</td>
+<td>10:00:00</td>
+<td>10.07.15</td>
+<td>10.07.15</td>
+<td>wisoapp</td>
+<td>12</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='73002' href='#73002'></a>73002</td><td>Informatik I</td>
+<td>Speckenmeyer</td>
+<td>15.10.15</td>
+<td>10:00:00</td>
+<td>01.10.15</td>
+<td>01.10.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='73004' href='#73004'></a>73004</td><td>Programmierpraktikum</td>
+<td>Madrid</td>
+<td>29.04.15</td>
+<td>LS</td>
+<td>15.04.15</td>
+<td>15.04.15</td>
+<td>wisoapp</td>
+<td>71</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='74003' href='#74003'></a>74003</td><td>Data, Models and Decisions</td>
+<td>Beroggi</td>
+<td>19.05.15</td>
+<td>LS</td>
+<td>05.05.15</td>
+<td>05.05.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='74004' href='#74004'></a>74004</td><td>Information Systems Architecture</td>
+<td>Sunyaev</td>
+<td>08.06.15</td>
+<td>12:00:00</td>
+<td>15.05.15</td>
+<td>15.05.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='75601' href='#75601'></a>75601</td><td>Information Systems Quality</td>
+<td>Sunyaev</td>
+<td>08.04.15</td>
+<td>10:00:00</td>
+<td>08.04.15</td>
+<td>08.04.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='76105' href='#76105'></a>76105</td><td>Change Management</td>
+<td>Basten</td>
+<td>26.05.15</td>
+<td>10:00:00</td>
+<td>12.05.15</td>
+<td>12.05.15</td>
+<td>wisoapp</td>
+<td>8</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='76106' href='#76106'></a>76106</td><td>Engineering Management</td>
+<td>Basten</td>
+<td>15.07.15</td>
+<td>15:00:00</td>
+<td>01.07.15</td>
+<td>01.07.15</td>
+<td>wisoapp</td>
+<td>5</td>
+</tr>
+<tr ><td><a name='76107' href='#76107'></a>76107</td><td>Information Management</td>
+<td>Schoder</td>
+<td>01.08.15</td>
+<td>10:00:00</td>
+<td>18.07.15</td>
+<td>18.07.15</td>
+<td>wisoapp</td>
+<td>5</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='76108' href='#76108'></a>76108</td><td>Emerging Electronic Business</td>
+<td>Schoder</td>
+<td>25.07.15</td>
+<td>10:00:00</td>
+<td>11.07.15</td>
+<td>11.07.15</td>
+<td>wisoapp</td>
+<td>3</td>
+</tr>
+<tr ><td><a name='83001' href='#83001'></a>83001</td><td>Medizinische Fachsprache</td>
+<td>Karenberg</td>
+<td>17.09.15</td>
+<td>15:45:00</td>
+<td>27.08.15</td>
+<td>03.09.15</td>
+<td>wisoapp</td>
+<td>2</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='83003' href='#83003'></a>83003</td><td>Einführung in ärztliches Handeln</td>
+<td>Woopen</td>
+<td>28.07.15</td>
+<td>11:00:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>8</td>
+</tr>
+<tr ><td><a name='83102' href='#83102'></a>83102</td><td>Gesundheitsrecht</td>
+<td>Rehborn</td>
+<td>29.09.15</td>
+<td>14:30:00</td>
+<td>27.08.15</td>
+<td>03.09.15</td>
+<td>wisoapp</td>
+<td>5</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='84001' href='#84001'></a>84001</td><td>Gesundheitsökonomische Evaluation</td>
+<td>Stock</td>
+<td>27.07.15</td>
+<td>15:00:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>15</td>
+</tr>
+<tr ><td><a name='84004' href='#84004'></a>84004</td><td>Ethik des Gesundheitswesens</td>
+<td>Woopen</td>
+<td>17.09.15</td>
+<td>14:00:00</td>
+<td>27.08.15</td>
+<td>03.09.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='86001' href='#86001'></a>86001</td><td>Qualitätssicherung und Qualitätsmanagement</td>
+<td>Stock</td>
+<td>30.07.15</td>
+<td>12:45:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>15</td>
+</tr>
+<tr ><td><a name='86002' href='#86002'></a>86002</td><td>Patientensicherheit und Risikomanagement</td>
+<td>Schrappe</td>
+<td>30.09.15</td>
+<td>08:45:00</td>
+<td>27.08.15</td>
+<td>03.09.15</td>
+<td>wisoapp</td>
+<td>3</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='86003' href='#86003'></a>86003</td><td>Management im Gesundheitswesen</td>
+<td>Kuntz</td>
+<td>31.07.15</td>
+<td>12:15:00</td>
+<td>17.07.15</td>
+<td>17.07.15</td>
+<td>wisoapp</td>
+<td>12</td>
+</tr>
+<tr ><td><a name='86005' href='#86005'></a>86005</td><td>Advanced Health Care Management</td>
+<td>Kuntz</td>
+<td>31.07.15</td>
+<td>10:00:00</td>
+<td>17.07.15</td>
+<td>17.07.15</td>
+<td>wisoapp</td>
+<td>9</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='86006' href='#86006'></a>86006</td><td>Proseminar Management im Gesundheitswesen</td>
+<td>Kuntz</td>
+<td>10.04.15</td>
+<td>12:00:00</td>
+<td>10.04.15</td>
+<td>10.04.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='86007' href='#86007'></a>86007</td><td>Praxisseminar Management im Gesundheitswesen</td>
+<td>Kuntz</td>
+<td>10.04.15</td>
+<td>LS</td>
+<td>10.04.15</td>
+<td>10.04.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='86008' href='#86008'></a>86008</td><td>Selected Issues in Health Care Management</td>
+<td>Kuntz</td>
+<td>24.04.15</td>
+<td>LS</td>
+<td>24.04.15</td>
+<td>24.04.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='86104' href='#86104'></a>86104</td><td>Grundlagen, Grenzen und Möglichkeiten der Naturheilkunde und Homöopathie</td>
+<td>Beuth</td>
+<td>21.05.15</td>
+<td>16:00:00</td>
+<td>21.04.15</td>
+<td>07.05.15</td>
+<td>wisoapp</td>
+<td>6</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='86108' href='#86108'></a>86108</td><td>Kompetenzfelder</td>
+<td>Stock</td>
+<td>16.07.15</td>
+<td>LS</td>
+<td>02.07.15</td>
+<td>02.07.15</td>
+<td>Lehrstuhl</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='88001' href='#88001'></a>88001</td><td>Evidenz-basierte Medizin I</td>
+<td>Diverse</td>
+<td>17.09.15</td>
+<td>10:30:00</td>
+<td>27.08.15</td>
+<td>03.09.15</td>
+<td>wisoapp</td>
+<td>3</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='88003' href='#88003'></a>88003</td><td>Evidenz-basierte Medizin II</td>
+<td>Diverse</td>
+<td>30.07.15</td>
+<td>11:00:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>1</td>
+</tr>
+<tr ><td><a name='88005' href='#88005'></a>88005</td><td>Klinische Studien: Anwendungen</td>
+<td>Ziegenhagen</td>
+<td>31.07.15</td>
+<td>14:00:00</td>
+<td>17.07.15</td>
+<td>17.07.15</td>
+<td>wisoapp</td>
+<td>8</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='88007' href='#88007'></a>88007</td><td>Kritische Bewertung gesundheitsökonomischer Studien</td>
+<td>Gerber-Grote</td>
+<td>15.07.15</td>
+<td>LS</td>
+<td>01.07.15</td>
+<td>01.07.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='91001' href='#91001'></a>91001</td><td>Einführung in die Volkswirtschaftslehre</td>
+<td>Fath</td>
+<td>22.07.15</td>
+<td>08:45:00</td>
+<td>29.06.15</td>
+<td>06.07.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='91001' href='#91001'></a>91001</td><td>Einführung in die Volkswirtschaftslehre</td>
+<td>Fath</td>
+<td>22.09.15</td>
+<td>08:45:00</td>
+<td>27.08.15</td>
+<td>03.09.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='91003' href='#91003'></a>91003</td><td>Betriebswirtschaftslehre und ihre Didaktik II</td>
+<td>Buschfeld</td>
+<td>13.07.15</td>
+<td>18:00:00</td>
+<td>29.06.15</td>
+<td>29.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='91003' href='#91003'></a>91003</td><td>Betriebswirtschaftslehre und ihre Didaktik II</td>
+<td>Buschfeld</td>
+<td>09.09.15</td>
+<td>11:00:00</td>
+<td>26.08.15</td>
+<td>26.08.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='91004' href='#91004'></a>91004</td><td>Einführung in die Sozialwissenschaften</td>
+<td>Schulz-Nieswandt</td>
+<td>18.07.15</td>
+<td>LS</td>
+<td>04.07.15</td>
+<td>04.07.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='91005' href='#91005'></a>91005</td><td>Methoden und Konzepte der Wirtschafts- und Sozialforschung</td>
+<td>Göckede</td>
+<td>07.07.15</td>
+<td>18:00:00</td>
+<td>23.06.15</td>
+<td>23.06.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr ><td><a name='91005' href='#91005'></a>91005</td><td>Methoden und Konzepte der Wirtschafts- und Sozialforschung</td>
+<td>Göckede</td>
+<td>16.09.15</td>
+<td>11:00:00</td>
+<td>02.09.15</td>
+<td>02.09.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+<tr bgcolor='DF DF DF'><td><a name='91006' href='#91006'></a>91006</td><td>Methodik vernetzten Denkens</td>
+<td>Pilz</td>
+<td>01.06.15</td>
+<td>LS</td>
+<td>18.05.15</td>
+<td>18.05.15</td>
+<td>wisoapp</td>
+<td>0</td>
+</tr>
+</table>
+<hr>
+</div>
+</body>
