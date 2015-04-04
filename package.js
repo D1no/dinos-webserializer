@@ -9,12 +9,8 @@ Npm.depends({
 Package.describe({
 	name: packageName,
 	version: '0.0.1',
-	// Brief, one-line summary of the package.
-	summary: 'Package to parse a html table from an URL and return it as an Object',
-	// URL to the Git repository containing the source code for this package.
-	//git: '',
-	// By default, Meteor will default to using README.md for documentation.
-	// To avoid submitting documentation, set this field to null.
+	summary: 'Web parser & scraper for meteor to collect and transform html into a document schema.',
+	git: 'https://github.com/D1no/dinos-webserializer.git',
 	documentation: 'README.md'
 });
 
@@ -41,6 +37,16 @@ Package.onUse(function(api) {
 
 Package.onTest(function(api) {
 	api.use('tinytest');
-	api.use('pruef:tableparser');
-	api.addFiles('tableparser-tests.js', 'server');
+	api.use(packageName);
+
+	// test-assets
+	// /packages/local-test_dinos_webserializer/test/assets/wiso_uoc_exams_03-04-15.html
+	api.addFiles('test/assets/wiso_uoc_exams_03-04-15.html', ['client', 'server'], {isAsset: true});
+
+	// direct application files
+	api.addFiles('lib/setup.js', 'server');
+	api.addFiles('lib/job.js', 'server');
+
+	api.addFiles('test/stubs.js', 'server');
+	api.addFiles('test/webSerializer-tests.js', 'server');
 });

@@ -1,6 +1,5 @@
 
 webSerializer = function (config) {
-
 	/*
 	* Checking and preparing for correct configuration
 	* */
