@@ -1,22 +1,16 @@
-var showIncompleteTest = false;
-
-/*
-* Test Set-Up
-* */
-// html with table
-var validDummyUrl = "/packages/local-test_dinos_webserializer/test/assets/wiso_uoc_exams_03-04-15.html";
+var showIncompleteTest = true;
 
 /*
 * Testing Initialisation
 * */
 Tinytest.add('webSerializer - webSerializer.js clean initialization - Worker receives a new Job through webSerializer(schemaObject) initialisation', function (test) {
-	var testSite = webSerializer({url: validDummyUrl});
+	var testSite = webSerializer({url: fixture.url.valid});
 	test.instanceOf(testSite, Object);
 	test.isTrue(_.has(testSite, "config"), "config property on initialized worker");
 
 	// when there is no base url or htmlDocument, should return false
 	testSite = webSerializer({stupid: "mistake"});
-	test.isFalse(testSite, "Error in initialisation returns empty worker");
+	test.isFalse(testSite, "Error in initialisation returns false set worker");
 
 });
 
@@ -30,9 +24,9 @@ Tinytest.add('webSerializer - webSerializer.js clean initialization - Complain i
 * Testing Schema Setup
 * */
 Tinytest.add('webSerializer - setup.js routine - Set default config: .created, .url, .encoding, .userAgent, .fetchInFrame', function (test) {
-	var config = setup({url: validDummyUrl});
+	var config = setup({url: fixture.url.valid});
 
-	test.equal(config.url, validDummyUrl);
+	test.equal(config.url, fixture.url.valid);
 	test.equal(config.encoding, "binary");
 	test.equal(config.userAgent, "request");
 	test.isTrue(config.fetchInFrame);
@@ -50,7 +44,7 @@ Tinytest.add('webSerializer - setup.js routine - Schema validation ensures .url 
 
 // todo testing schema.fetch validation
 Tinytest.add('webSerializer - setup.js routine - .fetch is set, validate - that its array elements have .key properties', function (test) {
-	var config = setup({});
+	var config = setup(fixture.schema.invalidFetch_MissingKeys);
 
 	test.isFalse(showIncompleteTest, "TODO: This test needs to be written!");
 });

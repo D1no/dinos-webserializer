@@ -48,5 +48,6 @@ Package.onTest(function(api) {
 	api.addFiles('lib/job.js', 'server');
 
 	api.addFiles('test/stubs.js', 'server');
+	api.addFiles('test/fixture.js', 'server');
 	api.addFiles('test/webSerializer-tests.js', 'server');
 });
