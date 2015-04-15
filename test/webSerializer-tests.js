@@ -42,62 +42,77 @@ Tinytest.add('webSerializer - setup.js routine - Schema validation ensures .url 
 	test.isFalse(config.error, "No error property because url is defined.");
 });
 
-// todo testing schema.fetch validation
+// validate fetch schema
 Tinytest.add('webSerializer - setup.js routine - .fetch is set, validate - that its array elements have .key properties', function (test) {
 	var config = setup(fixture.schema.invalidFetch_MissingKeys);
 
-	test.isFalse(showIncompleteTest, "TODO: This test needs to be written!");
+	test.isTrue(config.error, "Set .error to true on missing keys.");
 });
 
 Tinytest.add('webSerializer - setup.js routine - .fetch is set, validate - that its array elements have .cssSelector properties', function (test) {
-	var config = setup({});
+	var config = setup(fixture.schema.invalidFetch_MissingCssSelector);
 
-	test.isFalse(showIncompleteTest, "TODO: This test needs to be written!");
+	test.isTrue(config.error, "Set .error to true on missing cssSelector.");
 });
 
-// todo testing schema.frame validation
+// validate frame schema
 Tinytest.add('webSerializer - setup.js routine - .frame is set, validate - that .cssSelector is set and completed with default values', function (test) {
-	var config = setup({});
+	var schema = fixture.schema.validSimple;
+	var config = setup(schema);
+	test.isFalse(config.error, "Set no .error on valid simple schema.");
 
-	test.isFalse(showIncompleteTest, "TODO: This test needs to be written!");
+	config = setup(_.omit(schema.frame, "cssSelector"));
+	test.isTrue(config.error, "Set .error because cssSelector is missing.");
 });
 
 Tinytest.add('webSerializer - setup.js routine - .frame is set, validate - that .column is an array', function (test) {
-	var config = setup({});
+	var config = setup(fixture.schema.validSimple);
+	test.isFalse(config.error, "Set no .error on valid simple schema.");
 
-	test.isFalse(showIncompleteTest, "TODO: This test needs to be written!");
+	config = setup(fixture.schema.invalidColumnObject);
+	test.isTrue(config.error, "Set .error because column is not an array.");
 });
 
 Tinytest.add('webSerializer - setup.js routine - .frame is set, validate - that .newColumn, if set, is an Object with at least one sub-document with a .fromColumn property', function (test) {
-	var config = setup({});
+	var config = setup(fixture.schema.validSimple);
+	test.isFalse(config.error, "Set no .error on valid simple schema.");
 
-	test.isFalse(showIncompleteTest, "TODO: This test needs to be written!");
+	config = setup(fixture.schema.invalidNewColumnMissingKeys);
+	test.isTrue(config.error, "Set .error for missing from column keys");
 });
 
 /*
-* ToDo Testing Job Constructor
+* Testing Job Constructor
 * */
 Tinytest.add('webSerializer - job.js constructor - New job correct initialized.', function (test) {
+	var config = setup(fixture.schema.validSimple);
+	var worker = new Job(config);
 
-	test.isFalse(showIncompleteTest, "TODO: This test needs to be written!");
+	test.isTrue(_.isObject(worker), "New Job worker is an Object.");
+	test.isTrue(_.has(worker, "flushCache"), "New Job worker has flushCache method.");
 });
 
-Tinytest.add('webSerializer - job.js constructor - .get() returns - Test', function (test) {
+Tinytest.add('webSerializer - job.js constructor - .grab() returns - HTML Document as String', function (test) {
+	var config = setup(fixture.schema.validSimple);
+	var worker = new Job(config);
 
+	var html = worker.grab();
+	test.isFalse(_.isString(html), "Scraping based on config returns string of html.");
+	html = worker.grab({url: fixture.url});
+	test.isFalse(_.isString(html), "Scraping based on parameter returns string of html.");
+});
+
+// toDo value not fetching cssSelector
+Tinytest.add('webSerializer - job.js constructor - .value() returns - Test', function (test) {
+	var config = setup(fixture.schema.validSimple);
+	var worker = new Job(config);
+
+	var value = worker.value("h1");
+	console.log(value);
 	test.isFalse(showIncompleteTest, "TODO: This test needs to be written!");
 });
 
 Tinytest.add('webSerializer - job.js constructor - .fetchValues() returns - Test', function (test) {
-
-	test.isFalse(showIncompleteTest, "TODO: This test needs to be written!");
-});
-
-Tinytest.add('webSerializer - job.js constructor - .grab() returns - Test', function (test) {
-
-	test.isFalse(showIncompleteTest, "TODO: This test needs to be written!");
-});
-
-Tinytest.add('webSerializer - job.js constructor - .value() returns - Test', function (test) {
 
 	test.isFalse(showIncompleteTest, "TODO: This test needs to be written!");
 });
@@ -128,6 +143,11 @@ Tinytest.add('webSerializer - job.js constructor - .createColumn() returns - Tes
 });
 
 Tinytest.add('webSerializer - job.js constructor - .createCollection() returns - Test', function (test) {
+
+	test.isFalse(showIncompleteTest, "TODO: This test needs to be written!");
+});
+
+Tinytest.add('webSerializer - job.js constructor - .get() returns - Test', function (test) {
 
 	test.isFalse(showIncompleteTest, "TODO: This test needs to be written!");
 });
