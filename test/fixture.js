@@ -224,5 +224,25 @@ fixture.schema = {
 			column: page.tableColumns.validSimple,
 			newColumn: page.newColumns.validSimple
 		}
+	},
+	invalidColumnObject: {
+		url: page.url,
+		jobId: page.jobId,
+		fetch: page.elements.validSimple,
+		frame: {
+			cssSelector: page.tableCss.valid,
+			column: {wrong: "type"},
+			newColumn: page.newColumns.invalidSimple_MissingFromColumnKey
+		}
+	},
+	invalidNewColumnMissingKeys: {
+		url: page.url,
+		jobId: page.jobId,
+		fetch: page.elements.validSimple,
+		frame: {
+			cssSelector: page.tableCss.valid,
+			column: page.tableColumns.validSimple,
+			newColumn: page.newColumns.invalidSimple_MissingFromColumnKey
+		}
 	}
 };
