@@ -50,5 +50,6 @@ Package.onTest(function(api) {
 
 	api.addFiles('test/stubs.js', 'server');
 	api.addFiles('test/fixture.js', 'server');
-	api.addFiles('test/webSerializer-tests.js', 'server');
+	api.addFiles('test/webSerializer-integration.js', 'server');
+	api.addFiles('test/webSerializer-unit.js', 'server');
 });

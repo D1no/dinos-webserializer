@@ -1,4 +1,7 @@
-var showIncompleteTest = true;
+var showIncompleteTest = false;
+var runSuite = false;
+
+if(runSuite) {
 
 /*
 * Testing Initialisation
@@ -151,3 +154,6 @@ Tinytest.add('webSerializer - job.js constructor - .get() returns - Test', funct
 
 	test.isFalse(showIncompleteTest, "TODO: This test needs to be written!");
 });
+
+// Closure for runTest if condition
+}
