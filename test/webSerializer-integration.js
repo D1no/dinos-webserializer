@@ -41,7 +41,7 @@ Tinytest.add('webSerializer - integration: unstructured tests - UoC, WiSo Exam R
 	test.include(result, "subTitle_4", "Not possible to overwrite values with the same key. Instead names key keyname_arrayIndex");
 });
 
-Tinytest.add('webSerializer - integration: unstructured tests - UoC, WiSo Exam Registration Page - Scraping and Serializing Table', function (test) {
+Tinytest.add('webSerializer - integration: unstructured tests - UoC, WiSo Exam Registration Page - Scraping and Serializing the UoC Table', function (test) {
 
 	/*
 	needs moment package for testing sophisticated schema
@@ -87,6 +87,88 @@ Tinytest.add('webSerializer - integration: unstructured tests - UoC, WiSo Exam R
 	};
 
 	var result = webSerializer(schema).get();
-	console.dir(result);
+//	console.dir(result.frame[3]);
+
+
+	/*
+	* Assurance Test
+	* */
+	test.equal(result.url, fixture.url.valid, "Url is included in retun object");
+	test.equal(result.source.numberColumns, 9, "The amount of columns of the target Table is correctly identified and returned.");
+	test.equal(result.source.numberRows, 522, "The amount of rows of the target Table is correctly identified and returned.");
+
+	test.equal(result.frame[0]._url, fixture.url.valid, "The URL is included in the Frame element.");
+
+	test.equal(result.frame[3].moduleNumber.value, "01002", "ModuleNumber is 01002 of fourth row.");
+	test.equal(result.frame[3].numberRegistered.count, 8, "Number Registered is 8 of fourth row.");
+	test.equal(result.frame[3].numberRegistered._nextRow.count, result.frame[4].numberRegistered.count, "Number Registered of nextRow is 1, equal to fifth row.");
+	test.equal(result.frame[3].numberRegistered._prevRow.count, result.frame[2].numberRegistered.count, "Number Registered of prevRow is 2, equal to third row.");
+
+	test.equal(result.frame[3].numberRegistered._row, 3, "_row is 3 (4) on table with start index 1");
+	test.equal(result.frame[3].numberRegistered._col, 8, "_col is 8 (9) on table with start index 1");
+
+	test.equal(result.frame[3].moduleNumber._label, "Module Number of the Exam", "Column label from schema is included in return object.");
+
+});
+
+
+Tinytest.add('webSerializer - integration: unstructured tests - UoC, WiSo Exam Registration Page - Creating new Columns, omitting Columns', function (test) {
+
+	/*
+	 needs moment package for testing sophisticated schema
+	 */
+	var schema = {
+		url: fixture.url.valid,
+		frame: {
+			cssSelector: {
+				scope: "#box table", // opt
+				row: "tr", // opt
+				header: "th", // opt
+				cell: "td", // opt
+				headerRow: 1, // opt
+				rowStart: 2 // opt
+			},
+			column: [
+				{key: "moduleNumber", label: "Module Number of the Exam", transform: function(field, row) {
+					return {value: field.text};
+				}},
+				// skip following column for export, can still be used for column creation if key is set
+				{key: "moduleDescriptionNote", label: "label of the Column", exclude: true},
+				{key: "examiner", label: "label of the Column"},
+				// exclude rest of the columns
+				{key: "examDate", exclude: true},
+				{key: "examTime", exclude: true},
+				{key: "registrationDeadline", exclude: true},
+				{key: "cancellationDeadline", exclude: true},
+				{key: "registrationMode", exclude: true},
+				{key: "numberRegistered", exclude: true}
+			],
+			newColumn: {
+				moduleDescription: {
+					fromColumnKey: "moduleDescriptionNote",
+					label: "Only Module Description Column",
+					header: function (value, row) {
+						// cropping header
+						return ("createColumn Header " + value.text);
+					},
+					field: function (value, row) {
+						// manipulating field
+						return ("createColumn Field " + value.text);
+					}
+				}
+			}
+		}
+	};
+
+	var result = webSerializer(schema).get();
+	console.dir(result.frame[3]);
+
+
+	/*
+	 * Assurance Test
+	 * */
+	test.equal(result.frame[3].moduleDescription.text, "createColumn Field Technik des betrieblichen Rechnungswesens", "New Column Module Description has create Column Field prefixed by transform function");
+	test.equal(result.frame[3].moduleDescription._nextRow.text, "createColumn Field Technik des betrieblichen Rechnungswesens", "New Column Module Description has in the _nextRow create Column Field prefixed by transform function");
+	test.equal(result.frame[3].moduleDescription._prevRow.text, "createColumn Field Operations Management", "New Column Module Description has in the _prevRow create Column Field prefixed by transform function");
 
 });
