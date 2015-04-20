@@ -1,5 +1,5 @@
 var showIncompleteTest = false;
-var runSuite = false;
+var runSuite = true;
 
 if(runSuite) {
 
@@ -105,13 +105,10 @@ Tinytest.add('webSerializer - job.js constructor - .grab() returns - HTML Docume
 	test.isFalse(_.isString(html), "Scraping based on parameter returns string of html.");
 });
 
-// toDo value not fetching cssSelector
+// toDo complete unit tests
+	/*
 Tinytest.add('webSerializer - job.js constructor - .value() returns - Test', function (test) {
-	var config = setup(fixture.schema.validSimple);
-	var worker = new Job(config);
 
-	var value = worker.value("h1");
-	console.log(value);
 	test.isFalse(showIncompleteTest, "TODO: This test needs to be written!");
 });
 
@@ -154,6 +151,6 @@ Tinytest.add('webSerializer - job.js constructor - .get() returns - Test', funct
 
 	test.isFalse(showIncompleteTest, "TODO: This test needs to be written!");
 });
-
+*/
 // Closure for runTest if condition
 }
