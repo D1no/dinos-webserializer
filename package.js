@@ -38,6 +38,7 @@ Package.onUse(function(api) {
 Package.onTest(function(api) {
 	api.use('tinytest');
 	api.use('meteorhacks:async');
+	api.use('underscore');
 	api.use(packageName);
 
 	// test-assets
