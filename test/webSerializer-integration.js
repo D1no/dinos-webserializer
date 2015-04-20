@@ -161,7 +161,7 @@ Tinytest.add('webSerializer - integration: unstructured tests - UoC, WiSo Exam R
 	};
 
 	var result = webSerializer(schema).get();
-	console.dir(result.frame[3]);
+//	console.dir(result.frame[3]);
 
 
 	/*
