@@ -52,7 +52,7 @@ var schema = {
 		],
 		newColumn: {
 			keyOfNewColumn: { // new property for each new column, based on the provided which needs to be defined above
-				fromColumn: "columns.key",
+				fromColumnKey: "columns.key",
 				label: "",  // opt
 				header: function(value, row) {}, // opt
 				field: function(value, row) {} // opt
