@@ -75,6 +75,9 @@
         }
       }
     },
+    "iconv-lite": {
+      "version": "0.4.8"
+    },
     "request": {
       "version": "2.54.0",
       "dependencies": {

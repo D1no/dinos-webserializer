@@ -3,7 +3,8 @@ var packageName = "dinos:webserializer";
 // packages/spooky/package.js
 Npm.depends({
 	"cheerio": "0.19.0",
-	"request": "2.54.0"
+	"request": "2.54.0",
+	"iconv-lite": "0.4.8"
 });
 
 Package.describe({
