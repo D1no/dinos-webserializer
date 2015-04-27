@@ -1,5 +1,12 @@
 
-webSerializer = function (config) {
+webSerializer = function (config, loadDocument) {
+
+	// Possibility to overload schema before initialisation
+	if(loadDocument) {
+		config.url = false;
+		config.htmlDocument = loadDocument;
+	}
+
 	/*
 	* Checking and preparing for correct configuration
 	* */
